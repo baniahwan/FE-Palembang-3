@@ -1,0 +1,95 @@
+:root {
+    --primary: #412508;
+    --secondary: #765827;
+    --muda: #FFF5E0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+    border: none;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    background-color: var(--muda);
+    color: var(--primary);
+}
+
+/*navbar*/
+.logo {
+    width: 100px;
+    height: auto;
+    margin-left: 10px;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5PX;
+    padding-right: 40px;
+    background-color: var(--primary);
+    position: fixed;
+    width: 100%;
+}
+
+.navbar-content {
+    color: var(--muda);
+    
+}
+
+.navbar-content a {
+    color: #E2EDE9;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.navbar-content a:hover {
+    color: #C8AE7D;
+}
+
+.navbar-content i:hover {
+    color: #C8AE7D;
+}
+
+.navbar-content i {
+    color: var(--muda);
+    padding: 5px;
+    font-size: 18px;
+}
+
+/*home*/
+.slides img {
+    width: 100%;
+    height: fit-content;
+    padding-top: 55px;
+}
+
+/*about us*/
+.about-img {
+    width: 300px; 
+    height: auto;
+    margin-left: 30px;
+    margin-top: 30px;
+}
+.about-section {
+    display: flex;
+    align-items: center;
+}
+.about-text {
+    margin-left: 20px;
+    
+}
+.about-text h1{
+    text-align: left;
+}
+.description{
+    margin-top: 20px;
+}

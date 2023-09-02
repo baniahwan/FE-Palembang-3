@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/cf76925589.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Daily Deals</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <header class="navigation">
+        <img class="logo" src="assets/Logo.png" alt="Logo">
+        <nav class="navbar-container">
+            <!-- Navbar -->
+            <div class="navbar-content">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Menu</a>
+                <a href="#">Order Online</a>
+                <a href="#">Contact</a>
+                <i class="fas fa-cart-shopping" style="color: #ffffff;"></i>
+                <i class="far fa-user" style="color: #ffffff;"></i>
+            </div>
+        </nav>
+    </header>
+
+    <section>
+        <div class="Banner-slides">
+            <div class="slides">
+                <img src="assets/Banner 1.png" alt="Banner 1">
+            </div>
+            <div class="slides">
+                <img src="assets/Banner 2.png" alt="Banner 2">
+            </div>
+            <div class="slides">
+                <img src="assets/Banner 3.png" alt="Banner 3">
+            </div>
+        </div>
+    </section>
+    
+<!--Banner Slides-->
+    <script>
+       var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("slides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 4000); // Ganti gambar setiap 4 detik
+        }
+    </script>
+    
+<!--About us-->
+    <section class="about-section">
+        <img class="about-img" src="assets/gambarabout.png" alt="gambar about us">
+            <div class="about-text">
+                <h1>About Us</h1>
+                <p>Bite into Joyful Fast Fare Delights !</p>
+                <p class="description">Daily Deals is a website for selling fast food, offering delicious and convenient choices of fast food. Quick and easy taste satisfaction in your hands</p>
+            </div>
+    </section>
+
+</body>
+</html>
