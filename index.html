@@ -15,17 +15,17 @@
         <nav class="navbar-container">
             <!-- Navbar -->
             <div class="navbar-content">
-                <a href="#">Home</a>
-                <a href="#">About</a>
-                <a href="#">Menu</a>
-                <a href="#">Order Online</a>
-                <a href="#">Contact</a>
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link" href="#about-us">About</a>
+                <a class="nav-link" href="#">Menu</a>
+                <a class="nav-link" href="#order-online">Order Online</a>
+                <a class="nav-link" href="#">Contact</a>
                 <i class="fas fa-cart-shopping" style="color: #ffffff;"></i>
                 <i class="far fa-user" style="color: #ffffff;"></i>
             </div>
         </nav>
     </header>
-    <!--bani test commit-->
+
     <section>
         <div class="Banner-slides">
             <div class="slides">
@@ -36,6 +36,9 @@
             </div>
             <div class="slides">
                 <img src="assets/Banner 3.png" alt="Banner 3">
+            </div>
+            <div class="slides">
+                <img src="assets/Banner 4.png" alt="Banner 4">
             </div>
         </div>
     </section>
@@ -56,19 +59,49 @@
                 slideIndex = 1;
             }
             slides[slideIndex - 1].style.display = "block";
-            setTimeout(showSlides, 4000); // Ganti gambar setiap 4 detik
+            setTimeout(showSlides, 3000); // Ganti gambar setiap 3 detik
         }
     </script>
     
-<!--About us section-->
-    <section class="about-section">
-        <img class="about-img" src="assets/gambarabout.png" alt="gambar about us">
-            <div class="about-text">
-                <h1>About Us</h1>
-                <p>Bite into Joyful Fast Fare Delights !</p>
-                <p class="description">Daily Deals is a website for selling fast food, offering delicious and convenient choices of fast food. Quick and easy taste satisfaction in your hands</p>
+<!--About us-->
+    <section id="about-us">
+        <div class="about-text">
+            <div>
+                <img class="about-img" src="assets/gambarabout.png" alt="gambar about us">
             </div>
+            <div class="">
+
+            </div>  
+                <h2>ABOUT US</h2>
+                <p class="slogan">Bite into Joyful Fast Fare Delights !</p>
+                <p class="description">
+                    Daily Deals menghadirkan beragam pilihan makanan cepat saji yang menggoda selera
+                    dan sangat praktis untuk dinikmati. Dengan kami, Anda bisa merasakan kepuasan rasa
+                    yang instan dan semudah menggenggamnya di tangan Anda.Jadi, jangan lewatkan kesempatan untuk menikmati sajian cepat saji yang lezat dan praktis bersama Daily Deals!
+                </p>
+        </div>
+          
     </section>
 
+<!--Order Online-->
+    <section id="order-online" class="order-online-container">
+        <div class="order-online-text">
+            <h1>WE DELIEVER</h1>
+            <p class="motto">SATISFYING YOUR CRAVING JUST GOT EASIER !</p>
+            <p class="detail">Discover Daily Deals – Your Ultimate Food Destination. Why wait? Your cravings are calling, and we're answering – one delicious deal at a time</p>
+            <button class="full-menu-button">Full Menu</button>
+        </div>
+        <div class="order-online-image">
+            <img src="assets/order.png" alt="order">
+        </div>
+    </section>
+
+<!--Contact us-->
+    <section id="contact-us">
+        <div>
+            <h1>CONTACT US</h1>
+        </div>
+
+</section>
 </body>
 </html>

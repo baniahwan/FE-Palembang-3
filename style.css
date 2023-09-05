@@ -74,22 +74,109 @@ body {
 
 /*about us*/
 .about-img {
-    width: 300px; 
+    width: 275px;
     height: auto;
-    margin-left: 30px;
-    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 37px;
 }
-.about-section {
-    display: flex;
-    align-items: center;
+.about-us {
+    text-align: center; 
 }
 .about-text {
-    margin-left: 20px;
-    
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center; 
+    padding: 20px; 
 }
-.about-text h1{
-    text-align: left;
+.about-text h2 {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 800;
+    color: #65451F; 
 }
-.description{
+.slogan {
+    text-align: center;
+    color: #000000;
+    margin-top: 10px;
+    font-weight: bold;
+}
+.description {
+    text-align: justify;
+    margin: 20px 0; 
+    margin-right: 200px;
+    margin-left: 200px;
+    font-weight: 600;
+    color: #000000;
+    line-height: 1.4;
+}
+.about-img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease; 
+}
+
+/*Order Online*/
+#order-online{
+    background-color: #C8AE7D;
+    text-align: center; 
+    padding: 50px 0; 
+}
+.order-online-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+.order-online-text {
+   width: 60%;
+   text-align: center;
+   padding: 20px;
+   margin-top: 10px;
+}
+.order-online-text h1 {
+    font-size: 37px;
+    font-weight: bold;
+    color: #000000;
+}
+.motto{
+    text-align: center;
+    font-size: 20px;
+    color: #000000;
+    margin-top: 10px;
+    font-weight: bold; 
+}
+.detail{
+    margin: 20px 0; 
+    margin-right: 90px;
+    margin-left: 90px;
+    font-weight: 600;
+    color: #000000;
+    line-height: 1.5;
+}
+.order-online-image {
+    width: 30%;  
+}
+.order-online-image img {
+    max-width: 100%;  
+}
+.order-online-image:hover{
+    transform: scale(1.05);
+    transition: transform 0.3s ease; 
+}
+.full-menu-button {
+    background-color: #765827; 
     margin-top: 20px;
+    color: #ffffff; 
+    font-size: 15px; 
+    padding: 10px 20px; 
+    border: none;
+    cursor: pointer; 
+    font-weight: bold;
+    border-radius: 20px;
+}
+.full-menu-button:hover {
+    background-color: #F2E8C6; 
+    color: #000000;
+    font-weight: bold;
 }
