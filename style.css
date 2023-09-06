@@ -44,19 +44,22 @@ body {
 }
 
 .navbar-content a {
-    color: #E2EDE9;
+    color: white;
     padding: 10px;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 500;
     text-align: center;
+    font-weight: 700;
 }
 
 .navbar-content a:hover {
     color: #C8AE7D;
+    border-bottom: 3px solid #C8AE7D !important;
 }
 
 .navbar-content i:hover {
     color: #C8AE7D;
+    
 }
 
 .navbar-content i {
@@ -74,12 +77,13 @@ body {
 
 /*about us*/
 .about-img {
-    width: 275px;
+    width: 315px;
     height: auto;
     margin-left: auto;
     margin-right: auto;
     display: block;
     margin-top: 37px;
+    margin-bottom: 15px;
 }
 .about-us {
     text-align: center; 
@@ -89,6 +93,8 @@ body {
     margin-right: auto;
     text-align: center; 
     padding: 20px; 
+    border-bottom: 2px solid black; 
+    padding-bottom: 20px; 
 }
 .about-text h2 {
     margin-top: 10px;
@@ -115,6 +121,38 @@ body {
 .about-img:hover {
     transform: scale(1.05);
     transition: transform 0.3s ease; 
+}
+
+/*favorite-menu*/
+.menu-text{
+    text-align: center;
+    margin-top: 30px;
+    font-size: 20px;
+}
+
+.menu-images {
+    text-align: center;
+}
+.menu-images img{
+    width: 250px;
+    height: auto;
+    margin: 40px 30px; 
+    display: inline-block; 
+}
+.full-menu-button{
+    background-color: #765827; 
+    margin-top: 20px;
+    color: #ffffff; 
+    font-size: 15px; 
+    padding: 10px 20px; 
+    border: none;
+    cursor: pointer; 
+    font-weight: bold;
+    border-radius: 20px;
+    margin-bottom: 70px;
+    display: block;
+    margin: 0 auto;
+    
 }
 
 /*Order Online*/
@@ -164,7 +202,7 @@ body {
     transform: scale(1.05);
     transition: transform 0.3s ease; 
 }
-.full-menu-button {
+.order-button {
     background-color: #765827; 
     margin-top: 20px;
     color: #ffffff; 
@@ -175,8 +213,63 @@ body {
     font-weight: bold;
     border-radius: 20px;
 }
-.full-menu-button:hover {
+.order-button:hover {
     background-color: #F2E8C6; 
     color: #000000;
     font-weight: bold;
+}
+/*contact-us*/
+form {
+    display: flex;
+    flex-direction: column;
+    margin-left: 95px;
+    margin-top: 5px;
+}
+label {
+    font-weight: bold;
+}
+input[type="text"],
+textarea {
+    width: 40%;
+    padding: 10px;
+    margin-bottom: 2px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.contact-us-text{
+    width: 60%;
+    text-align: center;
+    padding: 20px;
+    margin-top: 10px;  
+    font-size: large;
+}
+.information{
+    text-align: center;
+    color: #000000;
+    margin-top: 10px;
+    font-weight: 500;
+}
+.submit-button {
+    background-color: #765827; 
+    color: #ffffff; 
+    font-size: 15px; 
+    padding: 10px 20px; 
+    border: none;
+    cursor: pointer; 
+    font-weight: bold;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    margin-left: 95px;
+}
+
+/*footer*/
+.footer-text{
+    text-align: center;
+    margin: 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    color: white;
+    background-color: #3F2407;
+    clear:both;
 }

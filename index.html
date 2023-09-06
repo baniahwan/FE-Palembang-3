@@ -17,9 +17,9 @@
             <div class="navbar-content">
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
                 <a class="nav-link" href="#about-us">About</a>
-                <a class="nav-link" href="#">Menu</a>
+                <a class="nav-link" href="#favorite-menu">Menu</a>
                 <a class="nav-link" href="#order-online">Order Online</a>
-                <a class="nav-link" href="#">Contact</a>
+                <a class="nav-link" href="#contact-us">Contact</a>
                 <i class="fas fa-cart-shopping" style="color: #ffffff;"></i>
                 <i class="far fa-user" style="color: #ffffff;"></i>
             </div>
@@ -67,10 +67,6 @@
         <div class="about-text">
             <div>
                 <img class="about-img" src="assets/gambarabout.png" alt="gambar about us">
-            </div>
-            <div class="">
-
-            </div>  
                 <h2>ABOUT US</h2>
                 <p class="slogan">Bite into Joyful Fast Fare Delights !</p>
                 <p class="description">
@@ -78,9 +74,26 @@
                     dan sangat praktis untuk dinikmati. Dengan kami, Anda bisa merasakan kepuasan rasa
                     yang instan dan semudah menggenggamnya di tangan Anda.Jadi, jangan lewatkan kesempatan untuk menikmati sajian cepat saji yang lezat dan praktis bersama Daily Deals!
                 </p>
+            </div>     
         </div>
           
     </section>
+
+<!--Favorite Menu-->
+<section id="favorite-menu">
+    <div class="menu-text">
+        <h1>ALL FAVORITE MENU</h1>
+    </div>
+    <div class="menu-images">
+        <img src="assets/Milkshake.png" alt="milkshake">
+        <img src="assets/Cheeseburger.png" alt="Burger">
+        <img src="assets/kentang goreng.png" alt="kentang">
+    </div>
+    <div>
+        <button class="full-menu-button">Full Menu</button>
+        <br><br>
+    </div>
+</section>
 
 <!--Order Online-->
     <section id="order-online" class="order-online-container">
@@ -88,7 +101,7 @@
             <h1>WE DELIEVER</h1>
             <p class="motto">SATISFYING YOUR CRAVING JUST GOT EASIER !</p>
             <p class="detail">Discover Daily Deals – Your Ultimate Food Destination. Why wait? Your cravings are calling, and we're answering – one delicious deal at a time</p>
-            <button class="full-menu-button">Full Menu</button>
+            <button class="order-button">Order Online</button>
         </div>
         <div class="order-online-image">
             <img src="assets/order.png" alt="order">
@@ -96,10 +109,30 @@
     </section>
 
 <!--Contact us-->
-    <section id="contact-us">
-        <div>
-            <h1>CONTACT US</h1>
-        </div>
+<section id="contact-us">
+    <div class="contact-us-text">
+        <h1>CONTACT US</h1>
+        <p class="information">DROP US A LINE AND WE’LL GET BACK TO YOU</p>
+    </div>
+    <div class="contact-form">
+        <form>
+            <label for="name">Name :</label>
+            <input type="text" id="name" name="name" required >
+            <br>
+            <label for="message">Message :</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            <br><br>
+        </form>
+    </div>
+    <div>
+        <button class="submit-button">Submit</button>
+    </div>   
+</section>
+        
+ <!--Footer-->
+ <footer>
+    <h5 class="footer-text">Copyright &copy;2023 Daily Deals</h5>
+</footer>
 
 </section>
 </body>
