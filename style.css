@@ -1,5 +1,5 @@
 :root {
-    --primary: #412508;
+    --primary: #3F2407;
     --secondary: #765827;
     --muda: #FFF5E0;
 }
@@ -18,6 +18,8 @@ body {
     font-weight: bold;
     background-color: var(--muda);
     color: var(--primary);
+    margin: 0;
+    padding: 0;
 }
 
 /*navbar*/
@@ -26,42 +28,37 @@ body {
     height: auto;
     margin-left: 10px;
 }
-
 .navigation {
+    position: fixed;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 5PX;
     padding-right: 40px;
-    background-color: var(--primary);
+    background-color: #3F2407;
     position: fixed;
     width: 100%;
+    margin-bottom: 40px;
 }
-
 .navbar-content {
     color: var(--muda);
     
 }
-
 .navbar-content a {
     color: white;
     padding: 10px;
     font-size: 16px;
-    font-weight: 500;
     text-align: center;
     font-weight: 700;
 }
-
 .navbar-content a:hover {
     color: #C8AE7D;
     border-bottom: 3px solid #C8AE7D !important;
 }
-
 .navbar-content i:hover {
     color: #C8AE7D;
     
 }
-
 .navbar-content i {
     color: var(--muda);
     padding: 5px;
@@ -74,10 +71,9 @@ body {
     height: fit-content;
     padding-top: 55px;
 }
-
 /*about us*/
 .about-img {
-    width: 315px;
+    width: 375px;
     height: auto;
     margin-left: auto;
     margin-right: auto;
@@ -99,9 +95,10 @@ body {
 .about-text h2 {
     margin-top: 10px;
     text-align: center;
-    font-size: 30px;
-    font-weight: 800;
+    font-size: 35px;
+    font-weight: 900;
     color: #65451F; 
+    font-family: 'Poppins', sans-serif; 
 }
 .slogan {
     text-align: center;
@@ -118,43 +115,93 @@ body {
     color: #000000;
     line-height: 1.4;
 }
-.about-img:hover {
-    transform: scale(1.05);
-    transition: transform 0.3s ease; 
-}
 
 /*favorite-menu*/
-.menu-text{
+.menu-text h1{
+    font-weight: 900;
+    font-size: 35px;
+    color: #65451F;
     text-align: center;
-    margin-top: 30px;
+    margin-top: 10px;
+    font-family: 'Poppins', sans-serif; 
+}
+.report{
+    text-align: center;
+    color: #000000;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 15px;
+}
+.card-img-top{
+    border-radius: 50%;
+    width: 160px;
+    height: 160px;
+    margin-top: -50px;
+    object-fit: cover;
+}
+.card-body {
+    margin-top: 30px; 
+    text-align: center; 
+}
+.card-title{
     font-size: 20px;
 }
-
-.menu-images {
+.card-text{
+    font-weight: lighter;
+    margin-top: 15px;
+    font-size: 13px;
+}
+.card-text2{
+    font-weight: lighter;
+    margin-top: 15px;
+    font-size: 14px;
+}
+.card-food{
+    width: 19rem;
+    height: 17rem;
+    margin: 40px;
+    background-color: #765827;
+    border-radius: 10%;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 70px;
+   
+}
+.card-food2{
+    width: 18rem;
+    height: 19rem;
+    margin: 40px;
+    background-color: #765827;
+    border-radius: 10%;
+    color: #ffffff;
     text-align: center;
 }
-.menu-images img{
-    width: 250px;
-    height: auto;
-    margin: 40px 30px; 
-    display: inline-block; 
+.card-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around; 
+    flex-wrap: wrap; 
 }
 .full-menu-button{
     background-color: #765827; 
     margin-top: 20px;
     color: #ffffff; 
-    font-size: 15px; 
+    font-size: 20px; 
     padding: 10px 20px; 
     border: none;
     cursor: pointer; 
-    font-weight: bold;
+    font-weight: 600;
     border-radius: 20px;
     margin-bottom: 70px;
     display: block;
     margin: 0 auto;
-    
 }
-
+.full-menu-button:hover{
+    background-color: #C8AE7D; 
+    color: #000000;
+    border: #000000;
+    font-weight: 600;
+}
 /*Order Online*/
 #order-online{
     background-color: #C8AE7D;
@@ -174,8 +221,9 @@ body {
 }
 .order-online-text h1 {
     font-size: 37px;
-    font-weight: bold;
+    font-weight: 900;
     color: #000000;
+    font-family: 'Poppins', sans-serif; 
 }
 .motto{
     text-align: center;
@@ -198,25 +246,23 @@ body {
 .order-online-image img {
     max-width: 100%;  
 }
-.order-online-image:hover{
-    transform: scale(1.05);
-    transition: transform 0.3s ease; 
-}
 .order-button {
-    background-color: #765827; 
+    background-color: #C8AE7D; 
     margin-top: 20px;
-    color: #ffffff; 
-    font-size: 15px; 
+    color: black; 
+    font-size: 17px; 
     padding: 10px 20px; 
     border: none;
     cursor: pointer; 
-    font-weight: bold;
+    font-weight: 900;
     border-radius: 20px;
+    border: 2px solid #000000;
 }
 .order-button:hover {
-    background-color: #F2E8C6; 
-    color: #000000;
-    font-weight: bold;
+    background-color: #65451F; 
+    color: white;
+    font-weight: 900;
+    border: 2px solid black;
 }
 /*contact-us*/
 form {
@@ -237,7 +283,14 @@ textarea {
     border-radius: 5px;
     margin-top: 10px;
 }
-.contact-us-text{
+.contact-us-text h1{
+    text-align: center;
+    color: #3F2407;
+    margin-top: 10px;
+    font-weight: 900;
+    font-family: 'Poppins', sans-serif; 
+}
+.contact-us-text {
     width: 60%;
     text-align: center;
     padding: 20px;
@@ -249,6 +302,7 @@ textarea {
     color: #000000;
     margin-top: 10px;
     font-weight: 500;
+    font-family: 'Poppins', sans-serif; 
 }
 .submit-button {
     background-color: #765827; 
@@ -262,6 +316,12 @@ textarea {
     margin-bottom: 20px;
     margin-left: 95px;
 }
+.submit-button:hover{
+    background-color: #C8AE7D; 
+    color: #000000;
+    border: #000000;
+    font-weight: 600;
+}
 
 /*footer*/
 .footer-text{
@@ -272,4 +332,29 @@ textarea {
     color: white;
     background-color: #3F2407;
     clear:both;
+}
+
+.menu-title h1{
+    margin-top: 30px;
+    margin-bottom: 60px;
+    text-align: center;
+    font-weight: 900;
+    font-size: 40px;
+    font-family: 'Poppins', sans-serif; 
+    
+}
+.btn-box {
+    display: inline-block;
+    padding: 10px 20px; /* Sesuaikan dengan ukuran yang Anda inginkan */
+    background-color: #3F2407; /* Warna latar belakang tombol */
+    color: #fff; /* Warna teks */
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10px; /* Sudut tombol */
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.btn-box:hover {
+    background-color: #6c3f0b; /* Warna latar belakang saat tombol dihover */
 }
