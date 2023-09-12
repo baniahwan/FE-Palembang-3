@@ -3,7 +3,9 @@
     --secondary: #765827;
     --muda: #FFF5E0;
 }
-
+body {
+    overflow-x: hidden;
+  }
 * {
     margin: 0;
     padding: 0;
@@ -71,6 +73,7 @@ body {
     height: fit-content;
     padding-top: 55px;
 }
+
 /*about us*/
 .about-img {
     width: 375px;
@@ -119,9 +122,8 @@ body {
 /*Our Founder Section */
 .team h2 {
   margin-bottom: 1rem;
-  margin-top: 1rem;
   text-align: center;
-  font-size: 2.3rem;
+  font-size: 2.2rem;
   color: #65451F; 
   font-family: 'Poppins', sans-serif; 
   font-weight: 800;
@@ -130,6 +132,7 @@ body {
 .team p {
   text-align: center;
   max-width: 30rem;
+  color: #000000;
   margin: auto;
   font-weight: 600;
   line-height: 1.6;
@@ -143,14 +146,16 @@ body {
 }
 
 .team .column .team-card {
+    margin-top: -20px;
     text-align: center;
     padding-bottom: 2rem;
     flex-basis: 25%; /* Mengatur lebar elemen .team-card */
+    margin-bottom: 30px;
   }
   
   .team .column .team-card img {
-    border-radius: 80%;
-    width: 60%; /* Gambar akan mengisi elemen sepenuhnya */
+    border-radius: 50%;
+    width: 60%; 
   }
 
 
@@ -164,7 +169,7 @@ body {
     font-size: 35px;
     color: #65451F;
     text-align: center;
-    margin-top: 10px;
+    margin-top: 30px;
     font-family: 'Poppins', sans-serif; 
 }
 .report{
@@ -207,7 +212,6 @@ body {
     color: #ffffff;
     text-align: center;
     margin-top: 70px;
-   
 }
 .price{
     margin-top: 5px;
@@ -235,24 +239,22 @@ body {
     font-weight: 900;
     font-size: 40px;
     font-family: 'Poppins', sans-serif; 
-    
 }
 .btn-box {
     display: inline-block;
-    padding: 10px 20px; /* Sesuaikan dengan ukuran yang Anda inginkan */
-    background-color: #3F2407; /* Warna latar belakang tombol */
-    color: #fff; /* Warna teks */
+    padding: 10px 30px; 
+    background-color: #3F2407; 
+    color: #fff; 
     text-align: center;
     text-decoration: none;
-    border-radius: 10px; /* Sudut tombol */
+    border-radius: 10px; 
     transition: background-color 0.3s ease;
     margin-top: 20px;
 }
 
 .btn-box:hover {
-    background-color: #6c3f0b; /* Warna latar belakang saat tombol dihover */
+    background-color: #6c3f0b; 
 }
-
 
 .full-menu-button{
     background-color: #65451F; 
@@ -274,6 +276,7 @@ body {
     border: #000000;
     font-weight: 600;
 }
+
 /*Order Online*/
 #order-online{
     background-color: #C8AE7D;
@@ -304,6 +307,7 @@ body {
     margin-top: 10px;
     font-weight: bold; 
 }
+
 .detail{
     margin: 20px 0; 
     margin-right: 90px;
@@ -312,12 +316,16 @@ body {
     color: #000000;
     line-height: 1.5;
 }
+
 .order-online-image {
     width: 30%;  
 }
+
 .order-online-image img {
     max-width: 100%;  
+    margin-right: 30px;
 }
+
 .order-button {
     background-color: #C8AE7D; 
     margin-top: 20px;
@@ -330,12 +338,14 @@ body {
     border-radius: 20px;
     border: 2px solid #000000;
 }
+
 .order-button:hover {
     background-color: #65451F; 
     color: white;
     font-weight: 900;
     border: 2px solid black;
 }
+
 /*contact-us*/
 form {
     display: flex;
@@ -343,9 +353,11 @@ form {
     margin-left: 95px;
     margin-top: 5px;
 }
+
 label {
     font-weight: bold;
 }
+
 input[type="text"],
 textarea {
     width: 40%;
@@ -355,6 +367,7 @@ textarea {
     border-radius: 5px;
     margin-top: 10px;
 }
+
 .contact-us-text h1{
     text-align: center;
     color: #3F2407;
@@ -362,6 +375,7 @@ textarea {
     font-weight: 900;
     font-family: 'Poppins', sans-serif; 
 }
+
 .contact-us-text {
     width: 60%;
     text-align: center;
@@ -369,6 +383,7 @@ textarea {
     margin-top: 10px;  
     font-size: large;
 }
+
 .information{
     text-align: center;
     color: #000000;
@@ -376,6 +391,7 @@ textarea {
     font-weight: 500;
     font-family: 'Poppins', sans-serif; 
 }
+
 .submit-button {
     background-color: #765827; 
     color: #ffffff; 
@@ -388,6 +404,7 @@ textarea {
     margin-bottom: 20px;
     margin-left: 95px;
 }
+
 .submit-button:hover{
     background-color: #C8AE7D; 
     color: #000000;
