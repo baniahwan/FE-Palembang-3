@@ -44,26 +44,6 @@
         </div>
     </section>
     
-<!--Banner Slides-->
-    <script>
-       var slideIndex = 0;
-        showSlides();
-
-        function showSlides() {
-            var i;
-            var slides = document.getElementsByClassName("slides");
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) {
-                slideIndex = 1;
-            }
-            slides[slideIndex - 1].style.display = "block";
-            setTimeout(showSlides, 3000); // Ganti gambar setiap 3 detik
-        }
-    </script>
-    
 <!--About us-->
     <section id="about-us">
         <div class="about-text">
@@ -77,52 +57,6 @@
             </div>     
         </div>
     </section>
-
-<!--Founder Team Section-->
-<section id="team" class="team" style="background-color: #C8AE7D; padding: 30px;">
-    <h2>THE FOUNDERS</h2>
-    <p>
-        “It’s not about ideas. It’s about making ideas happen.” 
-    </p>
-
-    <div class="column">
-      <div class="team-card">
-        <img src="assets/Foto 1.png" alt="Founder" class="team-card-img" />
-        <h3 class="team-card-title">- Angel -</h3>
-        <p class="team-card-price">Co-Founder</p>
-      </div>
-      <div class="team-card">
-        <img src="assets/Foto 1.png" alt="Founder" class="team-card-img" />
-        <h3 class="team-card-title">- Bella -</h3>
-        <p class="team-card-price">Founder</p>
-      </div>
-      <div class="team-card">
-        <img src="assets/Foto 1.png" alt="Founder" class="team-card-img" />
-        <h3 class="team-card-title">- Risma -</h3>
-        <p class="team-card-price">Founder</p>
-      </div>
-      <div class="team-card">
-        <img src="assets/Foto 1.png" alt="Founder" class="team-card-img" />
-        <h3 class="team-card-title">- Andi -</h3>
-        <p class="team-card-price">Founder</p>
-      </div>
-      <div class="team-card">
-        <img src="assets/Foto 1.png" alt="Founder" class="team-card-img" />
-        <h3 class="team-card-title">- Bani -</h3>
-        <p class="team-card-price">Founder</p>
-      </div>
-      <div class="team-card">
-        <img src="assets/Foto 1.png" alt="Founder" class="team-card-img" />
-        <h3 class="team-card-title">- Wicak -</h3>
-        <p class="team-card-price">Founder</p>
-      </div>
-      <div class="team-card">
-        <img src="assets/Foto 1.png" alt="Founder" class="team-card-img" />
-        <h3 class="team-card-title">- Cahya -</h3>
-        <p class="team-card-price">Founder</p>
-      </div>
-    </div>
-  </section>
 
 <!--Favorite Menu-->
 <section id="favorite-menu" class="container-fluid">
@@ -203,12 +137,77 @@
         <button class="submit-button">Submit</button>
     </div>   
 </section>
-        
+
+<!--Founder Team Section-->
+<section id="team" class="team" style="background-color: #C8AE7D; padding: 30px;">
+    <h2>THE FOUNDERS</h2>
+    <p>
+        “It’s not about ideas. It’s about making ideas happen.” 
+    </p>
+
+    <div class="column">
+      <div class="team-card">
+        <img src="assets/Foto 3.png" alt="Founder" class="team-card-img" />
+        <h3 class="team-card-title">- Angel -</h3>
+        <p class="team-card-price">Co-Founder</p>
+      </div>
+      <div class="team-card">
+        <img src="assets/Foto 1.png" alt="Founder" class="team-card-img" />
+        <h3 class="team-card-title">- Bella -</h3>
+        <p class="team-card-price">Founder</p>
+      </div>
+      <div class="team-card">
+        <img src="assets/Foto 7.png" alt="Founder" class="team-card-img" />
+        <h3 class="team-card-title">- Risma -</h3>
+        <p class="team-card-price">Founder</p>
+      </div>
+      <div class="team-card">
+        <img src="assets/Foto 2.png" alt="Founder" class="team-card-img" />
+        <h3 class="team-card-title">- Andi -</h3>
+        <p class="team-card-price">Founder</p>
+      </div>
+      <div class="team-card">
+        <img src="assets/Foto 6.png" alt="Founder" class="team-card-img" />
+        <h3 class="team-card-title">- Bani -</h3>
+        <p class="team-card-price">Founder</p>
+      </div>
+      <div class="team-card">
+        <img src="assets/Foto 4.png" alt="Founder" class="team-card-img" />
+        <h3 class="team-card-title">- Wicak -</h3>
+        <p class="team-card-price">Founder</p>
+      </div>
+      <div class="team-card">
+        <img src="assets/Foto 5.png" alt="Founder" class="team-card-img" />
+        <h3 class="team-card-title">- Cahya -</h3>
+        <p class="team-card-price">Founder</p>
+      </div>
+    </div>
+  </section>
+
  <!--Footer-->
  <footer>
     <h5 class="footer-text">Copyright &copy;2023 Daily Deals</h5>
 </footer>
-
 </section>
+
+<!--Banner Slides-->
+<script>
+    var slideIndex = 0;
+     showSlides();
+
+     function showSlides() {
+         var i;
+         var slides = document.getElementsByClassName("slides");
+         for (i = 0; i < slides.length; i++) {
+             slides[i].style.display = "none";
+         }
+         slideIndex++;
+         if (slideIndex > slides.length) {
+             slideIndex = 1;
+         }
+         slides[slideIndex - 1].style.display = "block";
+         setTimeout(showSlides, 3000); // Ganti gambar setiap 3 detik
+     }
+ </script>
 </body>
 </html>
