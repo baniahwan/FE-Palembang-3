@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="x-icon" href="assets/LogoIcon.png">
     <script src="https://kit.fontawesome.com/cf76925589.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <title>Daily Deals</title>
@@ -20,12 +21,27 @@
                 <a class="nav-link" href="#favorite-menu">Menu</a>
                 <a class="nav-link" href="#order-online">Order Online</a>
                 <a class="nav-link" href="#contact-us">Contact</a>
-                <i class="fas fa-cart-shopping" style="color: #ffffff;"></i>
+                <i class="fas fa-cart-shopping" style="color: #ffffff;"><span id="cart-count"></span></i>
                 <i class="far fa-user" style="color: #ffffff;"></i>
             </div>
         </nav>
     </header>
    <br><br><br>
+
+   <!--Keranjang-->
+    <section id="cart-container" class="hidden">
+        <div class="cart-head">
+            <p>My Cart</p>
+            <a class="lihat-detail" href="#">Lihat detail</a>
+        </div>
+        <div id="cartItem">
+            
+        </div>
+        <div class="cart-foot">
+            <h3>Total</h3>
+            <h2 id="total">Rp 0.000</h2>
+        </div>
+    </section>
 
    <!--Menu Burger-->
     <section class="container-fluid">
@@ -37,54 +53,14 @@
             <h1>BURGER</h1>
         </div>
         <div class="card-container">
-                <div class="card text-center card-food2 mt-5">
-                    <div class="justify-content-center">
-                        <img src="assets/Cheeseburger.jpg" class="card-img-top" alt="burger">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title title2">CHEESE BURGER</h5>
-                        <p class="price">Rp 65.000</p>
-                        <p class="card-text">A mouthwatering beef patty grilled to perfection, adorned with melty cheese, served on a soft, toasted bun with fresh lettuce, tomato, and our special sauce.</p>
-                        <a href="#" class="btn-box">
-                            <i class="fa-solid fa-cart-shopping" style="color: #ffffff; margin-right: 7px;"></i>
-                            Add to Cart
-                        </a>                                              
-                    </div>
-                </div>
-                <div class="card text-center card-food2 mt-5">
-                    <div class="justify-content-center">
-                        <img src="assets/Burger bacon.jpeg" class="card-img-top" alt="burger bacon">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title title2">BURGER BACON</h5>
-                        <p class="price">Rp 75.000</p>
-                        <p class="card-text">A juicy, flame-grilled patty topped with crispy bacon strips, lettuce, tomato, and our signature sauce, all served on a warm, toasted bun.</p>
-                        <a href="#" class="btn-box">
-                            <i class="fa-solid fa-cart-shopping" style="color: #ffffff; margin-right: 7px;"></i>
-                            Add to Cart
-                        </a>  
-                    </div>
-                </div>
-                <div class="card text-center card-food2 mt-5">
-                    <div class="justify-content-center">
-                        <img src="assets/Burger ayam.jpg" class="card-img-top" alt="Chicken Burger">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title title2">CHICKEN BURGER</h5>
-                        <p class="price">Rp 55.000</p>
-                        <p class="card-text">Enjoy our Chicken Burger, featuring a tender and perfectly seasoned chicken patty, topped with fresh lettuce, ripe tomatoes.</p>
-                        <a href="#" class="btn-box">
-                            <i class="fa-solid fa-cart-shopping" style="color: #ffffff; margin-right: 7px;"></i>
-                            Add to Cart
-                        </a>  
-                    </div>
-                </div>
-            </div>
+
+        </div>
     </section>
 
     <!--Footer-->
     <footer>
         <h5 class="footer-text">Copyright &copy;2023 Daily Deals</h5>
-    </footer>        
+    </footer>
+    <script src="js/cart.js"></script>   
 </body>
 </html>

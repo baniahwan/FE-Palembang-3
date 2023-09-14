@@ -65,6 +65,7 @@ body {
 
 .navbar-content i:hover {
     color: #C8AE7D;
+    cursor: pointer;
     
 }
 
@@ -276,6 +277,7 @@ body {
     border-radius: 10px; 
     transition: background-color 0.3s ease;
     margin-top: 20px;
+    cursor: pointer;
 }
 
 .btn-box:hover {
@@ -452,4 +454,86 @@ textarea {
     color: white;
     background-color: #3F2407;
     clear:both;
+}
+
+/*Cart Container*/
+#cart-count{
+    font-size: 10px;
+    margin-left: -5px;
+    padding: 5px;
+    color: white;
+}
+.hidden{
+    display: none;
+}
+
+#cart-container{
+    width: 30%;
+    border-radius: 5px;
+    background-color: #eee;
+    padding: 15px;
+    text-align: center;
+    border: 3px solid goldenrod;
+    z-index: 4;
+    top: 59px;
+    right: 10px;
+    position: absolute;
+}
+
+.cart-head{
+    background-color: goldenrod;
+    border-radius: 3px;
+    height: 40px;
+    padding: 10px;
+    margin-bottom: 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.lihat-detail{
+    color: white;
+    margin-left: auto;
+}
+.lihat-detail:hover{
+    color: brown;
+}
+
+.cart-foot{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0px;
+    padding: 10px 0px;
+    border-top: 1px solid #333;
+}
+
+.cart-item{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    padding: 10px;
+    background-color: white;
+    border-bottom: 1px solid #aaa;
+    border-radius: 3px;
+    margin: 10px 10px;
+}
+
+.row-img{
+    width: 50px;
+    height: 50px;
+    border-radius: 1px solid goldenrod; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rowimg{
+    max-width: 43px;
+    max-height: 43px;
+    border-radius: 50%;
+}
+
+.fa-trash:hover{
+    cursor: pointer;
+    color: red;
 }
