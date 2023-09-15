@@ -1,215 +1,345 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="x-icon" href="assets/LogoIcon.png">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="x-icon" href="assets/LogoIcon.png" />
     <script src="https://kit.fontawesome.com/cf76925589.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" />
     <title>Daily Deals</title>
-    <link rel="stylesheet" href="css/style.css">
+  </head>
 
-</head>
-<body>
+  <body>
     <header class="navigation">
-        <img class="logo" src="assets/Logo.png" alt="Logo">
-        <nav class="navbar-container">
-            <!-- Navbar -->
-            <div class="navbar-content">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-                <a class="nav-link" href="#about-us">About</a>
-                <a class="nav-link" href="#favorite-menu">Menu</a>
-                <a class="nav-link" href="#order-online">Order</a>
-                <a class="nav-link" href="#contact-us">Contact</a>
-                <i class="fas fa-cart-shopping" style="color: #ffffff;"></i>
-                <a href="login_register.html">
-                    <i class="far fa-user" style="color: #ffffff;"></i>
-                </a>
-            </div>
-        </nav>
+      <img class="logo" src="assets/Logo.png" alt="Logo" />
+      <nav class="navbar-container">
+        <!-- Navbar -->
+        <div class="navbar-content">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link" href="#about-us">About</a>
+          <a class="nav-link" href="#favorite-menu">Menu</a>
+          <a class="nav-link" href="#order-online">Order</a>
+          <a class="nav-link" href="#contact-us">Contact</a>
+          <i class="fas fa-cart-shopping" style="color: #ffffff"></i>
+          <i class="far fa-user" style="color: #ffffff" id="loginButton"></i>
+        </div>
+      </nav>
     </header>
+
+<!--Login Register-->
+    <div class="popup" id="loginPopup">
+        <div class="popup-content">
+            <div class="container">
+                <span class="close" id="closeButton">&times;</span>
+                <div class="signin-signup">
+                    <!-- SIGN IN -->
+                    <form action="" class="sign-in-form">
+                        <h2 class="title">Login</h2>
+                        <div class="input-field">
+                            <i class="fas fa-user"></i>
+                            <input type="text" placeholder="Username" maxlength="20" required>
+                        </div>
+        
+                        <div class="input-field">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" placeholder="Password" required>
+                        </div>
+        
+                        <input type="submit" value="Login" class="btn">
+        
+                        <p class="account-text">Don't have an account? <a href="#" id="sign-up-btn2">Register</a></p>
+                    </form>
+        
+                    <!-- SIGN UP -->
+                    <form action="" class="sign-up-form">
+        
+                        <h2 class="title">Register</h2>
+        
+                        <div class="input-field">
+                            <i class="fas fa-user"></i>
+                            <input type="text" placeholder="Username" maxlength="20" required>
+                        </div>
+                        <div class="input-field">
+                            <i class="fas fa-envelope"></i>
+                            <input type="text" placeholder="Email" required>
+                        </div>
+                        <div class="input-field">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" placeholder="Password" required>
+                        </div>
+        
+                        <input type="submit" value="Register" class="btn">
+        
+                        <p class="account-text">Already have an account? <a href="index.html" id="sign-in-btn2">Login</a></p>
+                    </form>
+                </div>
+        
+                <!-- PANEL -->
+                <div class="panels-container">
+                    <div class="panel left-panel">
+                        <img src="assets/Logo.png" alt="logo" class="image">
+                        <br> <br>
+                        <div class="content">
+                            <h3>Already have account?</h3>
+                            <p>Please login to your account</p>
+                            <button class="btn" id="sign-in-btn">Login</button>
+                        </div>
+        
+                    </div>
+                    <div class="panel right-panel">
+                        <img src="assets/Logo.png" alt="logo" class="image">
+                        <br> <br>
+                        <div class="content">
+                            <h3>New Customer?</h3>
+                            <p>Hello, create your account</p>
+                            <button class="btn" id="sign-up-btn">Register</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!--Banner Slides Image-->
     <section>
-        <div class="Banner-slides">
-            <div class="slides">
-                <img src="assets/Banner 1.png" alt="Banner 1">
-            </div>
-            <div class="slides">
-                <img src="assets/Banner 2.png" alt="Banner 2">
-            </div>
-            <div class="slides">
-                <img src="assets/Banner 3.png" alt="Banner 3">
-            </div>
-            <div class="slides">
-                <img src="assets/Banner 4.png" alt="Banner 4">
-            </div>
+      <div class="Banner-slides">
+        <div class="slides">
+          <img src="assets/Banner 1.png" alt="Banner 1" />
         </div>
+        <div class="slides">
+          <img src="assets/Banner 2.png" alt="Banner 2" />
+        </div>
+        <div class="slides">
+          <img src="assets/Banner 3.png" alt="Banner 3" />
+        </div>
+        <div class="slides">
+          <img src="assets/Banner 4.png" alt="Banner 4" />
+        </div>
+      </div>
     </section>
-    
-<!--About us-->
+
+    <!--About us-->
     <section id="about-us">
-        <div class="about-text">
-            <div>
-                <img class="about-img" src="assets/gambarabout.png" alt="gambar about us">
-                <h2>ABOUT US</h2>
-                <p class="slogan">Bite into Joyful Fast Fare Delights !</p>
-                <p class="description">
-                    We're not just about delivering your favorite flavors at the speed of a click; we're all about serving up convenience, quality, and taste in every order. With a passion for fast food and a commitment to your satisfaction, we've reimagined the way you enjoy your favorites. Join us on a journey where deliciousness meets the digital age, and discover the future of fast food, right at your fingertips.
-                </p>
-            </div>     
+      <div class="about-text">
+        <div>
+          <img
+            class="about-img"
+            src="assets/gambarabout.png"
+            alt="gambar about us"
+          />
+          <h2>ABOUT US</h2>
+          <p class="slogan">Bite into Joyful Fast Fare Delights !</p>
+          <p class="description">
+            We're not just about delivering your favorite flavors at the speed
+            of a click; we're all about serving up convenience, quality, and
+            taste in every order. With a passion for fast food and a commitment
+            to your satisfaction, we've reimagined the way you enjoy your
+            favorites. Join us on a journey where deliciousness meets the
+            digital age, and discover the future of fast food, right at your
+            fingertips.
+          </p>
         </div>
+      </div>
     </section>
 
-<!--Favorite Menu-->
-<section id="favorite-menu" class="container-fluid">
-        <div class="menu-text text-center">
-            <h1>ALL FAVORITE MENU</h1>
-            <p class="report">An Endless Love for Timeless Tastes</p>
+    <!--Favorite Menu-->
+    <section id="favorite-menu" class="container-fluid">
+      <div class="menu-text text-center">
+        <h1>ALL FAVORITE MENU</h1>
+        <p class="report">An Endless Love for Timeless Tastes</p>
+      </div>
+      <div class="card-container">
+        <div class="card text-center card-food mt-5">
+          <div class="justify-content-center">
+            <img
+              src="assets/milkshake.jpeg"
+              class="card-img-top"
+              alt="milkshake"
+            />
+          </div>
+          <div class="card-body">
+            <h5 class="card-title title2">MILKSHAKE OREO</h5>
+            <p class="card-text2">
+              A luscious blend of velvety vanilla ice cream and crushed Oreo
+              cookies, all crowned with whipped cream and a final sprinkle of
+              cookie crumbs.
+            </p>
+          </div>
         </div>
-        <div class="card-container">
-                <div class="card text-center card-food mt-5">
-                    <div class="justify-content-center">
-                        <img src="assets/milkshake.jpeg" class="card-img-top" alt="milkshake">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title title2">MILKSHAKE OREO</h5>
-                        <p class="card-text2">A luscious blend of velvety vanilla ice cream and crushed Oreo cookies, all crowned with whipped cream and a final sprinkle of cookie crumbs.</p>
-                    </div>
-                </div>
-                <div class="card text-center card-food mt-5">
-                    <div class="justify-content-center">
-                        <img src="assets/Cheeseburger.jpg" class="card-img-top" alt="Burger">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title title2">CHEESE BURGER</h5>
-                        <p class="card-text2">A mouthwatering beef patty grilled to perfection, adorned with melty cheese, served on a soft, toasted bun with fresh lettuce, tomato, and our special sauce.</p>
-                    </div>
-                </div>
-                <div class="card text-center card-food mt-5">
-                    <div class="justify-content-center">
-                        <img src="assets/kentang.jpg" class="card-img-top" alt="kentang">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title title2">FRENCH FRIES</h5>
-                        <p class="card-text2">Enjoy the crispy perfection of our French Fries – golden, hand-cut potatoes, lightly seasoned and cooked to a satisfying crunch.</p>
-                    </div>
-                </div>
-                
-            </div>
+        <div class="card text-center card-food mt-5">
+          <div class="justify-content-center">
+            <img
+              src="assets/Cheeseburger.jpg"
+              class="card-img-top"
+              alt="Burger"
+            />
+          </div>
+          <div class="card-body">
+            <h5 class="card-title title2">CHEESE BURGER</h5>
+            <p class="card-text2">
+              A mouthwatering beef patty grilled to perfection, adorned with
+              melty cheese, served on a soft, toasted bun with fresh lettuce,
+              tomato, and our special sauce.
+            </p>
+          </div>
+        </div>
+        <div class="card text-center card-food mt-5">
+          <div class="justify-content-center">
+            <img src="assets/kentang.jpg" class="card-img-top" alt="kentang" />
+          </div>
+          <div class="card-body">
+            <h5 class="card-title title2">FRENCH FRIES</h5>
+            <p class="card-text2">
+              Enjoy the crispy perfection of our French Fries – golden, hand-cut
+              potatoes, lightly seasoned and cooked to a satisfying crunch.
+            </p>
+          </div>
+        </div>
+      </div>
 
-            <div class="text-center">
-                <a href="menu.html">
-                    <button class="full-menu-button">Menu</button>
-                </a>
-                <br><br>
-            </div>
-            
-</section>
+      <div class="text-center">
+        <a href="menu.html">
+          <button class="full-menu-button">Menu</button>
+        </a>
+        <br /><br />
+      </div>
+    </section>
 
-<!--Order Online-->
+    <!--Order Online-->
     <section id="order-online" class="order-online-container">
-        <div class="order-online-text">
-            <h1>WE DELIEVER</h1>
-            <p class="motto">SATISFYING YOUR CRAVING JUST GOT EASIER !</p>
-            <p class="detail">Discover Daily Deals – Your Ultimate Food Destination. Why wait? Your cravings are calling, and we're answering – one delicious deal at a time</p>
-            <button class="order-button">Order Online</button>
-        </div>
-        <div class="order-online-image">
-            <img src="assets/order.png" alt="order">
-        </div>
+      <div class="order-online-text">
+        <h1>WE DELIEVER</h1>
+        <p class="motto">SATISFYING YOUR CRAVING JUST GOT EASIER !</p>
+        <p class="detail">
+          Discover Daily Deals – Your Ultimate Food Destination. Why wait? Your
+          cravings are calling, and we're answering – one delicious deal at a
+          time
+        </p>
+        <button class="order-button">Order Online</button>
+      </div>
+      <div class="order-online-image">
+        <img src="assets/order.png" alt="order" />
+      </div>
     </section>
 
-<!--Contact us-->
-<section id="contact-us">
-    <div class="contact-us-text">
-        <h1>CONTACT US</h1>
-        <p class="information">DROP US A LINE AND WE’LL GET BACK TO YOU</p>
-    </div>
-    <div class="contact-form">
-        <form>
-            <label for="name">Name :</label>
-            <input type="text" id="name" name="name" required >
-            <br>
-            <label for="message">Message :</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
-            <br><br>
-        </form>
-    </div>
-    <div>
-        <button class="submit-button">Submit</button>
-    </div>   
-</section>
+    <!--Contact us-->
+    <section id="contact-us">
+      <div class="test">
+        <div style="flex: 1">
+          <div class="contact-us-text">
+            <h1 style="margin-right: 33%">CONTACT US</h1>
+            <p class="information">DROP US A LINE AND WE’LL GET BACK TO YOU</p>
+          </div>
+          <div class="contact-form">
+            <form>
+              <label for="name">Name :</label>
+              <input type="text" id="name" name="name" required />
+              <br />
+              <label for="message">Message :</label>
+              <textarea id="message" name="message" rows="4" required></textarea>
+              <br /><br />
+            </form>
+          </div>
+          <div>
+            <button class="submit-button">Submit</button>
+          </div>
+        </div>
+        <div style="width: 30%">
+          <div class="weopen-us-text">
+            <h1>WE'RE OPEN</h1>
+          </div>
+          <div class="information-open">Telephone : 123-456-7890</div>
+          <div class="information-open">
+            Email : info@go.id
+          </div>
+          <div class="information-open">
+            Location : Jakarta, Indonesia
+          </div>
+        </div>
+      </div>
+    </section>
 
-<!--Founder Team Section-->
-<section id="team" class="team" style="background-color: #C8AE7D; padding: 30px;">
-    <h2>THE FOUNDERS</h2>
-    <p>
-        “It’s not about ideas. It’s about making ideas happen.” 
-    </p>
+    <!--Founder Team Section-->
+    <section id="team" class="team" style="background-color: #c8ae7d; padding: 30px">
+      <h2>THE FOUNDERS</h2>
+      <p>“It’s not about ideas. It’s about making ideas happen.”</p>
 
-    <div class="column">
-      <div class="team-card">
-        <img src="assets/Foto 3.png" alt="Founder" class="team-card-img" />
-        <h3 class="team-card-title">- Angel -</h3>
-        <p class="team-card-price">Co-Founder</p>
+      <div class="column">
+        <div class="team-card">
+          <img src="assets/Foto 3.png" alt="Founder" class="team-card-img" />
+          <h3 class="team-card-title">- Angel -</h3>
+          <p class="team-card-price">Co-Founder</p>
+        </div>
+        <div class="team-card">
+          <img src="assets/Foto 1.png" alt="Founder" class="team-card-img" />
+          <h3 class="team-card-title">- Bella -</h3>
+          <p class="team-card-price">Founder</p>
+        </div>
+        <div class="team-card">
+          <img src="assets/Foto 7.png" alt="Founder" class="team-card-img" />
+          <h3 class="team-card-title">- Risma -</h3>
+          <p class="team-card-price">Founder</p>
+        </div>
+        <div class="team-card">
+          <img src="assets/Foto 2.png" alt="Founder" class="team-card-img" />
+          <h3 class="team-card-title">- Andi -</h3>
+          <p class="team-card-price">Founder</p>
+        </div>
+        <div class="team-card">
+          <img src="assets/Foto 6.png" alt="Founder" class="team-card-img" />
+          <h3 class="team-card-title">- Bani -</h3>
+          <p class="team-card-price">Founder</p>
+        </div>
+        <div class="team-card">
+          <img src="assets/Foto 4.png" alt="Founder" class="team-card-img" />
+          <h3 class="team-card-title">- Wicak -</h3>
+          <p class="team-card-price">Founder</p>
+        </div>
+        <div class="team-card">
+          <img src="assets/Foto 5.png" alt="Founder" class="team-card-img" />
+          <h3 class="team-card-title">- Cahya -</h3>
+          <p class="team-card-price">Founder</p>
+        </div>
       </div>
-      <div class="team-card">
-        <img src="assets/Foto 1.png" alt="Founder" class="team-card-img" />
-        <h3 class="team-card-title">- Bella -</h3>
-        <p class="team-card-price">Founder</p>
-      </div>
-      <div class="team-card">
-        <img src="assets/Foto 7.png" alt="Founder" class="team-card-img" />
-        <h3 class="team-card-title">- Risma -</h3>
-        <p class="team-card-price">Founder</p>
-      </div>
-      <div class="team-card">
-        <img src="assets/Foto 2.png" alt="Founder" class="team-card-img" />
-        <h3 class="team-card-title">- Andi -</h3>
-        <p class="team-card-price">Founder</p>
-      </div>
-      <div class="team-card">
-        <img src="assets/Foto 6.png" alt="Founder" class="team-card-img" />
-        <h3 class="team-card-title">- Bani -</h3>
-        <p class="team-card-price">Founder</p>
-      </div>
-      <div class="team-card">
-        <img src="assets/Foto 4.png" alt="Founder" class="team-card-img" />
-        <h3 class="team-card-title">- Wicak -</h3>
-        <p class="team-card-price">Founder</p>
-      </div>
-      <div class="team-card">
-        <img src="assets/Foto 5.png" alt="Founder" class="team-card-img" />
-        <h3 class="team-card-title">- Cahya -</h3>
-        <p class="team-card-price">Founder</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
- <!--Footer-->
- <footer>
-    <h5 class="footer-text">Copyright &copy;2023 Daily Deals</h5>
-</footer>
+    <!--Footer-->
+    <footer>
+      <h5 class="footer-text">Copyright &copy;2023 Daily Deals</h5>
+    </footer>
 
-<!--Banner Slides-->
-<script>
-    var slideIndex = 0;
-     showSlides();
+    <!--Script login.js-->
+    <script src="js/login_register.js"></script>
 
-     function showSlides() {
-         var i;
-         var slides = document.getElementsByClassName("slides");
-         for (i = 0; i < slides.length; i++) {
-             slides[i].style.display = "none";
-         }
-         slideIndex++;
-         if (slideIndex > slides.length) {
-             slideIndex = 1;
-         }
-         slides[slideIndex - 1].style.display = "block";
-         setTimeout(showSlides, 3000); // Ganti gambar setiap 3 detik
-     }
- </script>
-</body>
+    <!--Banner slides-->
+    <script>
+      var slideIndex = 0;
+      showSlides();
+
+      function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("slides");
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+          slideIndex = 1;
+        }
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 3000); // Ganti gambar setiap 3 detik
+      }
+
+        document.getElementById("loginButton").addEventListener("click", function() {
+            document.getElementById("loginPopup").style.display = "block";
+        });
+        document.getElementById("closeButton").addEventListener("click", function() {
+            document.getElementById("loginPopup").style.display = "none";
+        });
+    </script>
+  </body>
 </html>

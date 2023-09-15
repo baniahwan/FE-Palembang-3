@@ -40,7 +40,6 @@ body {
     padding: 10px 5PX;
     padding-right: 40px;
     background-color: #3F2407;
-    position: fixed;
     width: 100%;
     margin-bottom: 40px;
 }
@@ -134,7 +133,7 @@ body {
     padding-bottom: 5px; 
 }
 
-/*Our Founder Section */
+/*Founder Section */
 .team h2 {
   margin-bottom: 1rem;
   text-align: center;
@@ -172,7 +171,6 @@ body {
     border-radius: 50%;
     width: 60%; 
 }
-
 
 .team .column .team-card .team-card-title {
   margin: 1rem auto 0.5rem;
@@ -422,7 +420,8 @@ textarea {
     color: #000000;
     margin-top: 10px;
     font-weight: 500;
-    font-family: 'Poppins', sans-serif; 
+    font-family: 'Poppins', sans-serif;
+    margin-left: 63px; 
 }
 
 .submit-button {
@@ -444,6 +443,38 @@ textarea {
     border: #000000;
     font-weight: 600;
 }
+.test {
+    display: flex;
+    flex-direction: row;
+}
+
+.weopen-us-text h1{
+    text-align: center;
+    color: #3F2407;
+    margin-top: 10px;
+    font-weight: 900;
+    font-family: 'Poppins', sans-serif; 
+}
+
+.weopen-us-text {
+    width: 70%;
+    text-align: center;
+    padding: 20px;
+    margin-top: 5px;  
+    font-size: large;
+    margin-left: 10px;
+}
+
+.information-open{
+    text-align: left;
+    color: #000000;
+    margin-top: 10px;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    margin-left: 70px; 
+    font-size: 15px;
+}
+
 
 /*footer*/
 .footer-text{
@@ -458,10 +489,16 @@ textarea {
 
 /*Cart Container*/
 #cart-count{
-    font-size: 10px;
-    margin-left: -5px;
-    padding: 5px;
-    color: white;
+    position: absolute;
+    top: -2px;
+    left: 12px;
+
+    background-color: rgba(212, 19, 13, 1);
+    color: #fff;
+    border-radius: 3px;
+    padding: 1px 3px;
+    font: 8px Verdana;
+    margin-left: 40%;
 }
 .hidden{
     display: none;
@@ -536,4 +573,305 @@ textarea {
 .fa-trash:hover{
     cursor: pointer;
     color: red;
+}
+
+.button {
+  color: white;
+  display: inline-block; /* Inline elements with width and height. TL;DR they make the icon buttons stack from left-to-right instead of top-to-bottom */
+  position: relative; /* All 'absolute'ly positioned elements are relative to this one */
+  padding: 2px 5px;
+}
+
+/*Login Register*/
+.container {
+    position: relative;
+    width: 70vw;
+    height: 80vh;
+    background: #F8F0E5;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 100%;
+    height: 100%;
+    background:  #3F2407;
+    z-index: 6;
+    transform: translateX(100%);
+    transition: 1s ease-in-out;
+}
+
+.signin-signup {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 5;
+}
+
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 40%;
+    min-width: 238px;
+    padding: 0 10px;
+}
+
+form.sign-in-form {
+    opacity: 1;
+    transition: 0.5s ease-in-out;
+    transition-delay: 1s;
+    margin-right: 20%;
+}
+
+form.sign-up-form {
+    opacity: 0;
+    transition: 0.5s ease-in-out;
+    transition-delay: 1s;
+    margin-right: 10%;
+
+}
+
+.title {
+    font-size: 35px;
+    color: #3F2407;
+    margin-bottom: 10px;
+}
+
+.input-field {
+    width: 100%;
+    height: 50px;
+    background: #fff;
+    margin: 10px 0;
+    border: 2px solid #000000;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.input-field i {
+    flex: 1;
+    text-align: center;
+    color: #666;
+    font-size: 18px;
+}
+
+.input-field input {
+    flex: 5;
+    background: none;
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 600;
+    color: #444;
+}
+
+.btn {
+    width: 150px;
+    height: 50px;
+    border: none;
+    border-radius: 50px;
+    background: #65451F;
+    color: #fff;
+    font-weight: 600;
+    margin: 10px 0;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 15px;
+    border: 1.5px solid #fff;
+}
+
+.btn:hover {
+    background: #D8BF90;
+    color: #000000;
+    font-size: 15px;
+}
+
+.a {
+    text-decoration: none;
+}
+
+.panels-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 35%;
+    min-width: 238px;
+    padding: 0 10px;
+    text-align: center;
+    z-index: 50;
+}
+
+.left-panel {
+    pointer-events: none;
+}
+
+.content {
+    color: #fff;
+    transition: 1.1s ease-in-out;
+    transition-delay: 0.5s;
+}
+
+.panel h3 {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.panel p {
+    font-size: 15px;
+    padding: 10px 0;
+}
+
+.image {
+    width: 80%;
+    transition: 1.1s ease-in-out;
+    transition-delay: 0.4s;
+}
+
+.left-panel .image,
+.left-panel .content {
+    transform: translateX(-200%);
+}
+
+.right-panel .image,
+.right-panel .content {
+    transform: translateX(0);
+}
+
+.account-text {
+    display: none;
+}
+
+
+/*Animation*/
+
+.container.sign-up-mode::before {
+    transform: translateX(0);
+}
+
+.container.sign-up-mode .right-panel .image,
+.container.sign-up-mode .right-panel .content {
+    transform: translateX(200%);
+}
+
+.container.sign-up-mode .left-panel .image,
+.container.sign-up-mode .left-panel .content {
+    transform: translateX(0);
+}
+
+.container.sign-up-mode form.sign-in-form {
+    opacity: 0;
+}
+
+.container.sign-up-mode form.sign-up-form {
+    opacity: 1;
+}
+
+.container.sign-up-mode .right-panel {
+    pointer-events: none;
+}
+
+.container.sign-up-mode .left-panel {
+    pointer-events: all;
+}
+
+/*Responsive*/
+
+@media (max-width:779px) {
+    .container {
+        width: 100vw;
+        height: 100vh;
+    }
+}
+
+@media (max-width:635px) {
+    .container::before {
+        display: none;
+    }
+
+    form {
+        width: 80%;
+    }
+
+    form.sign-up-form {
+        display: none;
+    }
+
+    .container.sign-up-mode2 form.sign-up-form {
+        display: flex;
+        opacity: 1;
+    }
+
+    .container.sign-up-mode2 form.sign-in-form {
+        display: none;
+    }
+
+    .panels-container {
+        display: none;
+    }
+
+    .account-text {
+        display: initial;
+        margin-top: 30px;
+    }
+}
+
+@media (max-width:320px) {
+    form {
+        width: 90%;
+    }
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent black background */
+}
+
+.popup-content {
+    padding: 20px;
+    width: 100%;
+    position: absolute;
+    top: 55%;
+    left: 55%;
+
+    transform: translate(-43%, -50%);
+}
+
+.close {
+    position: absolute;
+    font-size: 40px;
+    top: 0;
+    right: 20px;
+    cursor: pointer;
+    color: red;
+    z-index: 9;
 }
