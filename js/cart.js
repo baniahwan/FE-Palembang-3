@@ -33,6 +33,13 @@ const product = [
     },
 ];
 
+// Tambahan JavaScript untuk tombol close
+const closeButton = document.getElementById("closeButton");
+
+closeButton.addEventListener('click', () => {
+    cartContainer.classList.add('hidden');
+});
+
 const categories = [...new Set(product.map((item)=>
     {return item}))]
     let i=0;

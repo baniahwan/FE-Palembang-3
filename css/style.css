@@ -575,6 +575,25 @@ textarea {
     color: red;
 }
 
+/* Gaya untuk tombol close */
+.close-button {
+    position: absolute;
+    font-size: 25px;
+    top: -10px;
+    right: -5px; 
+    cursor: pointer;
+    width: 25px; 
+    height: 25px;
+    background-color: red;
+    border-radius: 50%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white; 
+    z-index: 9;
+}
+
+
 .button {
   color: white;
   display: inline-block; /* Inline elements with width and height. TL;DR they make the icon buttons stack from left-to-right instead of top-to-bottom */
@@ -868,10 +887,42 @@ form.sign-up-form {
 
 .close {
     position: absolute;
-    font-size: 40px;
-    top: 0;
-    right: 20px;
+    font-size: 45px;
+    top: 10px;
+    right: 10px; 
     cursor: pointer;
-    color: red;
+    width: 40px; 
+    height: 40px;
+    background-color: red;
+    border-radius: 50%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white; 
     z-index: 9;
 }
+/*Continue to Checkout */
+#checkoutButton {
+    background-color: goldenrod; 
+    color: #fff; 
+    padding: 9px 9px; 
+    border: none;
+    border-radius: 5px; 
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 5px; 
+    font-weight: 600;
+}
+
+#checkoutButton:hover {
+    background-color:rgb(244, 186, 39); 
+}
+
+/* ukuran tablet */
+@media (min-width: 577px) and (max-width: 992px) {
+    /* Your CSS rules for small screens (tablets in portrait) */
+  }
+/* ukuran mobile */
+  @media (max-width: 576px) {
+    /* Your CSS rules for extra small screens */
+  }
