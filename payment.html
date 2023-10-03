@@ -21,13 +21,82 @@
                 <a class="nav-link" href="#favorite-menu">Menu</a>
                 <a class="nav-link" href="#order-online">Order Online</a>
                 <a class="nav-link" href="#contact-us">Contact</a>
-                <i class="fas fa-cart-shopping" style="color: #ffffff;"></i>
+                <div class="button">
+                    <i class="fas fa-cart-shopping" style="color: #ffffff;"><span id="cart-count">0</span></i>
+                </div>
                 <i class="far fa-user" style="color: #ffffff;"></i>
             </div>
         </nav>
     </header>
    <br><br><br>
 
-         
+   <section class="container-fluid">
+        <div class="payment-title">
+            <h1>CHECKOUT</h1>
+        </div>
+    </section>
+
+    <section id="cart-container-payment">
+        <div class="cart-head">
+            <p>My Order ( 3 )</p>
+            <a class="lihat-detail" href="#">Order details</a>
+        </div>
+        <div id="cartItem">
+            <div class='row-img'>
+                <img class='rowimg-payment' src='assets/BurgerAyam.jpg'>
+            </div>
+            <div class='item-description'>
+                <p class='burger-name'>Chicken Burger ( 1x )</p>
+                <p class='price-payment'>Rp 55.000</p>
+            </div>
+        </div>
+        <div id="cartItem">
+            <div class='row-img'>
+                <img class='rowimg-payment' src='assets/Cheeseburger.jpg' style="margin-top: 40px;">
+            </div>
+            <div class='item-description' style="margin-top: 20px;">
+                <p class='burger-name'>Cheese Burger ( 1x )</p>
+                <p class='price-payment'>Rp 65.000</p>
+            </div>
+
+        </div>
+        <div id="cartItem">
+            <div class='row-img'>
+                <img class='rowimg-payment' src='assets/BurgerBacon.jpg' style="margin-top: 25px;">
+            </div>
+            <div class='item-description' style="margin-top: 20px;">
+                <p class='burger-name'>Burger Bacon ( 1x )</p>
+                <p class='price-payment'>Rp 70.000</p>
+                <p style="float: left; font-weight: 500; margin-top: 30px; color: black;">Shipping fee</p>
+                <p style="margin-top:30px; font-weight: 500; float: right; margin-right: 23px; margin-bottom: 30px;">Rp 12.000</p>
+            </div>
+        </div>
+        <div class="cart-foot-payment" style="margin-top: 10%;">
+            <h3>Total</h3>
+            <h2 id="total">Rp 231.000</h2>
+        </div>
+        <div>
+            <button id="checkoutButton">Pay with Virtual Bank</button>
+        </div>
+        <div id="paymentModal" class="modal">
+            <div class="modal-content">
+              <span class="close" id="closePaymentModal">&times;</span>
+              <h2>PAYMENT</h2>
+              <form id="paymentForm">
+                <label for="bankName" style="text-align: left; margin-top: 20px;" >Bank Name   :</label>
+                <input type="text" id="bankName" name="bankName" required placeholder="Enter Bank Name">
+                <label for="accountNumber" style="text-align: left;">Account Number  :</label>
+                <input type="text" id="accountNumber" name="accountNumber" required placeholder="Enter Account Number">
+                <label for="" style="text-align: left; margin-top: 5px;" >Shipping Adress   :</label>
+                <input type="text" id="shippingAdress" name="shippingAdress" required placeholder="Enter Shipping Adress">
+              </form>
+              <div>
+                <a href="receipt.html" class="btn-box">Submit</a>
+              </div>
+            </div>
+          </div>
+    </section>
+    
+<script src="js/payment.js"></script>
 </body>
 </html>
