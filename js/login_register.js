@@ -23,6 +23,16 @@ sign_in_btn2.addEventListener("click", () => {
     container.classList.remove("sign-up-mode2");
 });
 
+$(function() {
+    if (localStorage.getItem('uname')) {
+        $('span.account-button').removeClass('hide');
+        $('span.account-button').text(localStorage.getItem('uname'));
+    } else {
+        $('span.account-button').addClass('hide');
+        $('span.account-button').text('');
+    }
+})
+
 $('#btnLogin').on('click',function() {
     $.ajax({
         url: 'https://dailydeals-api-production.up.railway.app/login',
@@ -34,7 +44,10 @@ $('#btnLogin').on('click',function() {
         dataType: 'json',
         contentType: 'application/json; charset=utf-8',
         success: function (response) {
-            console.log(response);
+            if (response[0]['message'] === 'Login Successful') {
+                localStorage.setItem('uname', response[0]['payload']['username']);
+                window.location.href = '/index.html'
+            }
         }
     })
 })

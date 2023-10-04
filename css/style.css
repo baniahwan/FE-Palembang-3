@@ -547,6 +547,15 @@ textarea {
     position: absolute;
 }
 
+#logout-container {
+    width: 15%;
+    padding: 10px;
+    z-index: 4;
+    top: 40px;
+    right: -70px;
+    position: absolute;
+}
+
 .cart-head{
     background-color: goldenrod;
     border-radius: 3px;
@@ -640,6 +649,8 @@ textarea {
     font-size: 29px;
     font-family: 'Poppins', sans-serif; 
 }
+
+/* Tambahkan gaya ini ke CSS Anda */
 
 #cart-container-payment{
     width: 70%;
@@ -1086,6 +1097,7 @@ form.sign-up-form {
     justify-content: center; /* Mengatur elemen-elemen di tengah secara horizontal */
 }
 
+
 .navbar-content li {
   margin-right: 20px;
 }
@@ -1108,10 +1120,23 @@ form.sign-up-form {
     font-weight: 600;
 }
 
+#logoutButton {
+    background-color: #000;
+    color: #fff;
+    padding: 9px 9px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 5px; 
+    font-weight: 600;
+}
+
 #checkoutButton:hover {
     background-color:rgb(244, 186, 39); 
 }
 
+.hide {
+    display: none;
+}
 /* ukuran tablet */
 @media (max-width: 992px) {
     /* Your CSS rules for small screens (tablets in portrait) */

@@ -1,137 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="x-icon" href="assets/LogoIcon.png">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="x-icon" href="assets/LogoIcon.png" />
     <script src="https://kit.fontawesome.com/cf76925589.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <title>Daily Deals</title>
-    <link rel="stylesheet" href="css/style.css">
-
-</head>
-<body>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
     <header class="navigation">
-        <a href="index.html">
-            <img class="logo" src="assets/Logo.png" alt="Logo">
-        </a>
-        <nav class="navbar-container">
-            <!-- Navbar -->
-            <button class="hamburger-menu"><i class="fa-solid fa-bars"></i></button>
-            <ul class="navbar-content">
-              <li><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
-              <li><a class="nav-link" href="#about-us">About</a></li>
-              <li><a class="nav-link" href="#favorite-menu">Menu</a></li>
-              <li><a class="nav-link" href="#order-online">Order</a></li>
-              <li><a class="nav-link" href="#contact-us">Contact</a></li>
-              <li><i class="fas fa-cart-shopping" style="color: #ffffff"></i></li>
-              <li><i class="far fa-user" style="color: #ffffff" id="loginButton"></i></li>
-            </ul>
-          </nav>
+      <a href="index.html">
+        <img class="logo" src="assets/Logo.png" alt="Logo" />
+      </a>
+      <nav class="navbar-container">
+        <!-- Navbar -->
+        <button class="hamburger-menu"><i class="fa-solid fa-bars"></i></button>
+        <ul class="navbar-content">
+          <li>
+            <a class="nav-link active" aria-current="page" href="index.html"
+              >Home</a
+            >
+          </li>
+          <li><a class="nav-link" href="#about-us">About</a></li>
+          <li><a class="nav-link" href="#favorite-menu">Menu</a></li>
+          <li><a class="nav-link" href="#order-online">Order</a></li>
+          <li><a class="nav-link" href="#contact-us">Contact</a></li>
+          <li><span class="account-button hide"></span></li>
+          <li><i class="fas fa-cart-shopping" style="color: #ffffff"></i></li>
+          <li>
+            <i class="far fa-user" style="color: #ffffff" id="loginButton"></i>
+          </li>
+        </ul>
+      </nav>
     </header>
-   <br><br><br>
+    <br /><br /><br />
 
-   <!--Menu Utama-->
+    <!--Menu Utama-->
     <section class="container-fluid">
-        <div class="menu-title">
-            <h1>OUR MENUS</h1>
-        </div>
-        <!--Filter Category-->
-        <div class="categories-container">
-            <a href="#" class="category-option active" onclick="getMenu('all')">ALL</a>
-            <a href="#" class="category-option" onclick="getMenu('burger')">BURGERS</a>
-            <a href="#" class="category-option" onclick="getMenu('sandwich')">SANDWICHES</a>
-            <a href="#" class="category-option" onclick="getMenu('dessertAndDrink')">DESSERTS & DRINKS</a>
-            <a href="#" class="category-option" onclick="getMenu('sides')">SIDES</a>
+      <div class="menu-title">
+        <h1>OUR MENUS</h1>
+      </div>
+      <!--Filter Category-->
+      <div class="categories-container">
+        <a href="#" class="category-option active" onclick="getMenu('all')"
+          >ALL</a
+        >
+        <a href="#" class="category-option" onclick="getMenu('burger')"
+          >BURGERS</a
+        >
+        <a href="#" class="category-option" onclick="getMenu('sandwich')"
+          >SANDWICHES</a
+        >
+        <a href="#" class="category-option" onclick="getMenu('dessertAndDrink')"
+          >DESSERTS & DRINKS</a
+        >
+        <a href="#" class="category-option" onclick="getMenu('sides')">SIDES</a>
+      </div>
 
-        </div>
-        
-        <div class="card-container" id="cardContent">
-                <!-- <div class="card text-center card-food2 mt-5">
-                    <div class="justify-content-center">
-                        <img src="assets/Cheeseburger.jpg" class="card-img-top" alt="burger">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title title2">BURGERS</h5>
-                        <p class="card-text">Discover burger bliss with our mouthwatering selection of Burgers. Crafted with passion and quality ingredients, delivering the perfect blend of flavors and satisfaction in every bite.</p>
-                        <a href="burger.html" class="btn-box">Full Menu</a>
-                    </div>
+      <div class="card-container" id="cardContent"></div>
+
+      <div class="popup" id="loginPopup">
+        <div class="popup-content">
+          <div class="container">
+            <span class="close" id="closeButton">&times;</span>
+            <div class="signin-signup">
+              <!-- SIGN IN -->
+              <form
+                action="javascript:void(0)"
+                class="sign-in-form"
+                method="post"
+              >
+                <h2 class="title">Login</h2>
+                <div class="input-field">
+                  <i class="fas fa-user"></i>
+                  <input
+                    type="text"
+                    placeholder="Username"
+                    name="username"
+                    id="usernameLogin"
+                    maxlength="20"
+                    required
+                  />
                 </div>
-                <div class="card text-center card-food2 mt-5"data-category="sandwich">
-                    <div class="justify-content-center">
-                        <img src="assets/sandwich.jpg" class="card-img-top" alt="sandwich">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title title2">SANDWICHES</h5>
-                        <p class="card-text">Experience the art of sandwich perfection with our Sandwiches. Our menu offers a delectable range of options that will satisfy your taste buds and leave you craving for more.</p>
-                        <a href="sandwich.html" class="btn-box">Full Menu</a>
-                    </div>
+
+                <div class="input-field">
+                  <i class="fas fa-lock"></i>
+                  <input
+                    type="password"
+                    placeholder="Password"
+                    name="password"
+                    id="passwordLogin"
+                    required
+                  />
                 </div>
-                <div class="card text-center card-food2 mt-5" data-category="dessert&drinks">
-                    <div class="justify-content-center">
-                        <img src="assets/milkshake.jpeg" class="card-img-top" alt="milkshake">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title title2">DESSERTS & DRINKS</h5>
-                        <p class="card-text">Indulge in sweet perfection with our Desserts and quench your thirst with our Drinks. Our menu offers a delightful array of choices that will satisfy your cravings in the most delicious way possible.</p>
-                        <a href="DessertDrink.html" class="btn-box">Full Menu</a>
-                    </div>
+
+                <input type="submit" value="Login" class="btn" id="btnLogin" />
+
+                <p class="account-text">
+                  Don't have an account?
+                  <a href="#" id="sign-up-btn2">Register</a>
+                </p>
+              </form>
+
+              <!-- SIGN UP -->
+              <form
+                action="javascript:void(0)"
+                class="sign-up-form"
+                method="post"
+              >
+                <h2 class="title">Register</h2>
+
+                <div class="input-field">
+                  <i class="fas fa-user"></i>
+                  <input
+                    type="text"
+                    placeholder="Username"
+                    name="username"
+                    id="usernameRegister"
+                    maxlength="20"
+                    required
+                  />
                 </div>
-                <div class="card text-center card-food2 mt-5" data-category="sides">
-                    <div class="justify-content-center">
-                        <img src="assets/kentang.jpg" class="card-img-top" alt="kentang">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title title2">SIDES</h5>
-                        <p class="card-text">Elevate your meal experience with our delectable Side Dishes – the perfect companions to your main course. Our sides add a burst of flavor, variety, and freshness to every bite.</p>
-                        <a href="sides.html" class="btn-box">Full Menu</a>
-                    </div>
-                </div> -->
+                <div class="input-field">
+                  <i class="fas fa-envelope"></i>
+                  <input
+                    type="text"
+                    placeholder="Email"
+                    name="email"
+                    id="emailRegister"
+                    required
+                  />
+                </div>
+                <div class="input-field">
+                  <i class="fas fa-lock"></i>
+                  <input
+                    type="password"
+                    placeholder="Password"
+                    id="passwordRegister"
+                    required
+                  />
+                </div>
+
+                <input
+                  type="submit"
+                  value="Register"
+                  class="btn"
+                  id="btnRegister"
+                />
+
+                <p class="account-text">
+                  Already have an account?
+                  <a href="index.html" id="sign-in-btn2">Login</a>
+                </p>
+              </form>
             </div>
+
+            <!-- PANEL -->
+            <div class="panels-container">
+              <div class="panel left-panel">
+                <img src="assets/Logo.png" alt="logo" class="image" />
+                <br />
+                <br />
+                <div class="content">
+                  <h3>Already have account?</h3>
+                  <p>Please login to your account</p>
+                  <button class="btn" id="sign-in-btn">Login</button>
+                </div>
+              </div>
+              <div class="panel right-panel">
+                <img src="assets/Logo.png" alt="logo" class="image" />
+                <br />
+                <br />
+                <div class="content">
+                  <h3>New Customer?</h3>
+                  <p>Hello, create your account</p>
+                  <button class="btn" id="sign-up-btn">Register</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!--Footer-->
     <footer>
-        <h5 class="footer-text">Copyright &copy;2023 Daily Deals</h5>
-    </footer> 
-    
+      <h5 class="footer-text">Copyright &copy;2023 Daily Deals</h5>
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="js/login_register.js"></script>
     <script>
-        $(function() {
-            getMenu('all');
-        })
-        function getMenu(category) {
-            $.ajax({
-                url: category === 'all' ? `https://dailydeals-api-production.up.railway.app/menu` : `https://dailydeals-api-production.up.railway.app/menu/${category}`,
-                dataType: 'json',
-                contentType: 'application/json; charset=utf-8',
-                beforeSend: function() {
-                    $('#cardContent').html('');
-                },
-                success: function(response) {
-                    let html = '';
-                    $.each(response[0]['payload'], function(i, val) {
-                        html += `<div class="card text-center card-food2 mt-5">
+      $(function () {
+        if (localStorage.getItem("uname")) {
+          $("span.account-button").removeClass("hide");
+          $("span.account-button").text(localStorage.getItem("uname"));
+        } else {
+          $("span.account-button").addClass("hide");
+          $("span.account-button").text("");
+        }
+        getMenu("all");
+      });
+      function getMenu(category) {
+        $.ajax({
+          url:
+            category === "all"
+              ? `https://dailydeals-api-production.up.railway.app/menu`
+              : `https://dailydeals-api-production.up.railway.app/menu/${category}`,
+          dataType: "json",
+          contentType: "application/json; charset=utf-8",
+          beforeSend: function () {
+            $("#cardContent").html("");
+          },
+          success: function (response) {
+            let html = "";
+            $.each(response[0]["payload"], function (i, val) {
+              html += `<div class="card text-center card-food2 mt-5">
                     <div class="justify-content-center">
-                        <img src="${val.gambar}" class="card-img-top" alt="burger">
+                        <img src="${
+                          val.gambar
+                        }" class="card-img-top" alt="burger">
                     </div>
                     <div class="card-body">
                         <h5 class="card-title title2">${val.nama}</h5>
+                        <p class="price">Rp ${new Intl.NumberFormat("id", {
+                          minimumFractionDigits: 0,
+                          maximumFractionDigits: 2,
+                        })
+                          .format(val.harga)
+                          .replace(",", ".")}</p>
                         <p class="card-text">${val.deskripsi}</p>
                     </div>
                 </div>`;
-                    })
+            });
 
-                    $('#cardContent').html(html);
-                }
-            })
-        }
-        const hamburgerMenu = document.querySelector('.hamburger-menu');
-        const navContent = document.querySelector('.navbar-content');
+            $("#cardContent").html(html);
+          },
+        });
+      }
+      const hamburgerMenu = document.querySelector(".hamburger-menu");
+      const navContent = document.querySelector(".navbar-content");
 
-        hamburgerMenu.addEventListener('click', () => {
-          navContent.classList.toggle('show');
+      hamburgerMenu.addEventListener("click", () => {
+        navContent.classList.toggle("show");
+      });
+      document
+        .getElementById("loginButton")
+        .addEventListener("click", function () {
+          if (!localStorage.getItem("uname")) {
+            document.getElementById("loginPopup").style.display = "block";
+          }
+        });
+      document
+        .getElementById("closeButton")
+        .addEventListener("click", function () {
+          document.getElementById("loginPopup").style.display = "none";
         });
     </script>
-</body>
+  </body>
 </html>

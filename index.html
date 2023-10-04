@@ -8,11 +8,22 @@
     <!-- Link to Font Awesome icons -->
     <script src="https://kit.fontawesome.com/cf76925589.js"></script>
     <!-- Link to Google Fonts - Montserrat -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <!-- Link to Font Awesome CSS -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
     <!-- Link to Google Fonts - Poppins -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap"
+      rel="stylesheet"
+    />
 
     <link rel="stylesheet" href="css/style.css" />
 
@@ -26,91 +37,143 @@
         <!-- Navbar -->
         <button class="hamburger-menu"><i class="fa-solid fa-bars"></i></button>
         <ul class="navbar-content">
-          <li><a class="nav-link active" aria-current="page" href="#">Home</a></li>
+          <li>
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
           <li><a class="nav-link" href="#about-us">About</a></li>
           <li><a class="nav-link" href="#favorite-menu">Menu</a></li>
           <li><a class="nav-link" href="#order-online">Order</a></li>
           <li><a class="nav-link" href="#contact-us">Contact</a></li>
-          <li><button class="account-button">Bella</button></li>
-          <li><i class="far fa-user" style="color: #ffffff" id="loginButton"></i></li>
-          
-          
+          <li><span class="account-button hide"></span></li>
+          <li>
+            <i class="far fa-user" style="color: #ffffff" id="loginButton"></i>
+          </li>
         </ul>
       </nav>
     </header>
 
-<!--Login Register-->
+    <!--Login Register-->
     <div class="popup" id="loginPopup">
-        <div class="popup-content">
-            <div class="container">
-                <span class="close" id="closeButton">&times;</span>
-                <div class="signin-signup">
-                    <!-- SIGN IN -->
-                    <form action="javascript:void(0)" class="sign-in-form" method="post">
-                        <h2 class="title">Login</h2>
-                        <div class="input-field">
-                            <i class="fas fa-user"></i>
-                            <input type="text" placeholder="Username" name="username" id="usernameLogin" maxlength="20" required>
-                        </div>
-        
-                        <div class="input-field">
-                            <i class="fas fa-lock"></i>
-                            <input type="password" placeholder="Password" name="password" id="passwordLogin" required>
-                        </div>
-        
-                        <input type="submit" value="Login" class="btn" id="btnLogin">
-        
-                        <p class="account-text">Don't have an account? <a href="#" id="sign-up-btn2">Register</a></p>
-                    </form>
-        
-                    <!-- SIGN UP -->
-                    <form action="javascript:void(0)" class="sign-up-form" method="post">
-        
-                        <h2 class="title">Register</h2>
-        
-                        <div class="input-field">
-                            <i class="fas fa-user"></i>
-                            <input type="text" placeholder="Username" name="username" id="usernameRegister" maxlength="20" required>
-                        </div>
-                        <div class="input-field">
-                            <i class="fas fa-envelope"></i>
-                            <input type="text" placeholder="Email" name="email" id="emailRegister" required>
-                        </div>
-                        <div class="input-field">
-                            <i class="fas fa-lock"></i>
-                            <input type="password" placeholder="Password" id="passwordRegister" required>
-                        </div>
-        
-                        <input type="submit" value="Register" class="btn" id="btnRegister">
-        
-                        <p class="account-text">Already have an account? <a href="index.html" id="sign-in-btn2">Login</a></p>
-                    </form>
-                </div>
-        
-                <!-- PANEL -->
-                <div class="panels-container">
-                    <div class="panel left-panel">
-                        <img src="assets/Logo.png" alt="logo" class="image">
-                        <br> <br>
-                        <div class="content">
-                            <h3>Already have account?</h3>
-                            <p>Please login to your account</p>
-                            <button class="btn" id="sign-in-btn">Login</button>
-                        </div>
-        
-                    </div>
-                    <div class="panel right-panel">
-                        <img src="assets/Logo.png" alt="logo" class="image">
-                        <br> <br>
-                        <div class="content">
-                            <h3>New Customer?</h3>
-                            <p>Hello, create your account</p>
-                            <button class="btn" id="sign-up-btn">Register</button>
-                        </div>
-                    </div>
-                </div>
+      <div class="popup-content">
+        <div class="container">
+          <span class="close" id="closeButton">&times;</span>
+          <div class="signin-signup">
+            <!-- SIGN IN -->
+            <form
+              action="javascript:void(0)"
+              class="sign-in-form"
+              method="post"
+            >
+              <h2 class="title">Login</h2>
+              <div class="input-field">
+                <i class="fas fa-user"></i>
+                <input
+                  type="text"
+                  placeholder="Username"
+                  name="username"
+                  id="usernameLogin"
+                  maxlength="20"
+                  required
+                />
+              </div>
+
+              <div class="input-field">
+                <i class="fas fa-lock"></i>
+                <input
+                  type="password"
+                  placeholder="Password"
+                  name="password"
+                  id="passwordLogin"
+                  required
+                />
+              </div>
+
+              <input type="submit" value="Login" class="btn" id="btnLogin" />
+
+              <p class="account-text">
+                Don't have an account?
+                <a href="#" id="sign-up-btn2">Register</a>
+              </p>
+            </form>
+
+            <!-- SIGN UP -->
+            <form
+              action="javascript:void(0)"
+              class="sign-up-form"
+              method="post"
+            >
+              <h2 class="title">Register</h2>
+
+              <div class="input-field">
+                <i class="fas fa-user"></i>
+                <input
+                  type="text"
+                  placeholder="Username"
+                  name="username"
+                  id="usernameRegister"
+                  maxlength="20"
+                  required
+                />
+              </div>
+              <div class="input-field">
+                <i class="fas fa-envelope"></i>
+                <input
+                  type="text"
+                  placeholder="Email"
+                  name="email"
+                  id="emailRegister"
+                  required
+                />
+              </div>
+              <div class="input-field">
+                <i class="fas fa-lock"></i>
+                <input
+                  type="password"
+                  placeholder="Password"
+                  id="passwordRegister"
+                  required
+                />
+              </div>
+
+              <input
+                type="submit"
+                value="Register"
+                class="btn"
+                id="btnRegister"
+              />
+
+              <p class="account-text">
+                Already have an account?
+                <a href="index.html" id="sign-in-btn2">Login</a>
+              </p>
+            </form>
+          </div>
+
+          <!-- PANEL -->
+          <div class="panels-container">
+            <div class="panel left-panel">
+              <img src="assets/Logo.png" alt="logo" class="image" />
+              <br />
+              <br />
+              <div class="content">
+                <h3>Already have account?</h3>
+                <p>Please login to your account</p>
+                <button class="btn" id="sign-in-btn">Login</button>
+              </div>
             </div>
+            <div class="panel right-panel">
+              <img src="assets/Logo.png" alt="logo" class="image" />
+              <br />
+              <br />
+              <div class="content">
+                <h3>New Customer?</h3>
+                <p>Hello, create your account</p>
+                <button class="btn" id="sign-up-btn">Register</button>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
 
     <!--Banner Slides Image-->
@@ -221,13 +284,13 @@
     <!--Order Online-->
     <section id="order-online" class="order-online-container">
       <div class="order-online-text">
-          <h1>WE DELIEVER</h1>
-          <p class="motto">SATISFYING YOUR CRAVING JUST GOT EASIER !</p>
-          <p class="detail">
-            Discover Daily Deals – Your Ultimate Food Destination. Why wait? Your
-            cravings are calling, and we're answering – one delicious deal at a
-            time
-          </p>
+        <h1>WE DELIEVER</h1>
+        <p class="motto">SATISFYING YOUR CRAVING JUST GOT EASIER !</p>
+        <p class="detail">
+          Discover Daily Deals – Your Ultimate Food Destination. Why wait? Your
+          cravings are calling, and we're answering – one delicious deal at a
+          time
+        </p>
       </div>
       <div class="order-online-image">
         <img src="assets/order.png" alt="order" />
@@ -235,7 +298,7 @@
     </section>
 
     <!--Contact us-->
-    <section id="contact-us"> 
+    <section id="contact-us">
       <div class="test">
         <div style="flex: 1">
           <div class="contact-us-text">
@@ -248,7 +311,12 @@
               <input type="textContact" id="name" name="name" required />
               <br />
               <label for="message">Message :</label>
-              <textarea id="message" name="message" rows="4" required></textarea>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                required
+              ></textarea>
               <br /><br />
             </form>
           </div>
@@ -261,18 +329,18 @@
             <h1>WE'RE OPEN</h1>
           </div>
           <div class="information-open">Telephone : 123-456-7890</div>
-          <div class="information-open">
-            Email : info@go.id
-          </div>
-          <div class="information-open">
-            Location : Jakarta, Indonesia
-          </div>
+          <div class="information-open">Email : info@go.id</div>
+          <div class="information-open">Location : Jakarta, Indonesia</div>
         </div>
       </div>
     </section>
 
     <!--Founder Team Section-->
-    <section id="team" class="team" style="background-color: #c8ae7d; padding: 30px">
+    <section
+      id="team"
+      class="team"
+      style="background-color: #c8ae7d; padding: 30px"
+    >
       <h2>THE FOUNDERS</h2>
       <p>“It’s not about ideas. It’s about making ideas happen.”</p>
 
@@ -315,6 +383,10 @@
       </div>
     </section>
 
+    <section id="logout-container" class="hidden">
+      <button id="logoutButton">Logout</button>
+    </section>
+
     <!--Footer-->
     <footer>
       <h5 class="footer-text">Copyright &copy;2023 Daily Deals</h5>
@@ -343,19 +415,43 @@
         setTimeout(showSlides, 3000); // Ganti gambar setiap 3 detik
       }
 
-        document.getElementById("loginButton").addEventListener("click", function() {
+      document
+        .getElementById("loginButton")
+        .addEventListener("click", function () {
+          if (!localStorage.getItem("uname")) {
             document.getElementById("loginPopup").style.display = "block";
+          } else {
+            const cartContainer = document.getElementById("logout-container");
+            if (cartContainer.classList.contains("hidden")) {
+              cartContainer.classList.remove("hidden");
+            } else {
+              cartContainer.classList.add("hidden");
+            }
+          }
         });
-        document.getElementById("closeButton").addEventListener("click", function() {
-            document.getElementById("loginPopup").style.display = "none";
+      document
+        .getElementById("closeButton")
+        .addEventListener("click", function () {
+          document.getElementById("loginPopup").style.display = "none";
         });
 
-        const hamburgerMenu = document.querySelector('.hamburger-menu');
-        const navContent = document.querySelector('.navbar-content');
+      document.getElementById("logoutButton").addEventListener('click', function() {
+        localStorage.removeItem('uname');
+        if (window.location.pathname === '/index.html') {
+          window.location.reload();
+        } else {
+          window.localStorage.href = '/index.html';
+        }
+      })
 
-        hamburgerMenu.addEventListener('click', () => {
-          navContent.classList.toggle('show');
-        });
+      
+
+      const hamburgerMenu = document.querySelector(".hamburger-menu");
+      const navContent = document.querySelector(".navbar-content");
+
+      hamburgerMenu.addEventListener("click", () => {
+        navContent.classList.toggle("show");
+      });
     </script>
   </body>
 </html>
