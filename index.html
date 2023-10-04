@@ -24,15 +24,18 @@
       <img class="logo" src="assets/Logo.png" alt="Logo" />
       <nav class="navbar-container">
         <!-- Navbar -->
-        <div class="navbar-content">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-          <a class="nav-link" href="#about-us">About</a>
-          <a class="nav-link" href="#favorite-menu">Menu</a>
-          <a class="nav-link" href="#order-online">Order</a>
-          <a class="nav-link" href="#contact-us">Contact</a>
-          <i class="fas fa-cart-shopping" style="color: #ffffff"></i>
-          <i class="far fa-user" style="color: #ffffff" id="loginButton"></i>
-        </div>
+        <button class="hamburger-menu"><i class="fa-solid fa-bars"></i></button>
+        <ul class="navbar-content">
+          <li><a class="nav-link active" aria-current="page" href="#">Home</a></li>
+          <li><a class="nav-link" href="#about-us">About</a></li>
+          <li><a class="nav-link" href="#favorite-menu">Menu</a></li>
+          <li><a class="nav-link" href="#order-online">Order</a></li>
+          <li><a class="nav-link" href="#contact-us">Contact</a></li>
+          <li><button class="account-button">Bella</button></li>
+          <li><i class="far fa-user" style="color: #ffffff" id="loginButton"></i></li>
+          
+          
+        </ul>
       </nav>
     </header>
 
@@ -43,42 +46,42 @@
                 <span class="close" id="closeButton">&times;</span>
                 <div class="signin-signup">
                     <!-- SIGN IN -->
-                    <form action="" class="sign-in-form">
+                    <form action="javascript:void(0)" class="sign-in-form" method="post">
                         <h2 class="title">Login</h2>
                         <div class="input-field">
                             <i class="fas fa-user"></i>
-                            <input type="text" placeholder="Username" maxlength="20" required>
+                            <input type="text" placeholder="Username" name="username" id="usernameLogin" maxlength="20" required>
                         </div>
         
                         <div class="input-field">
                             <i class="fas fa-lock"></i>
-                            <input type="password" placeholder="Password" required>
+                            <input type="password" placeholder="Password" name="password" id="passwordLogin" required>
                         </div>
         
-                        <input type="submit" value="Login" class="btn">
+                        <input type="submit" value="Login" class="btn" id="btnLogin">
         
                         <p class="account-text">Don't have an account? <a href="#" id="sign-up-btn2">Register</a></p>
                     </form>
         
                     <!-- SIGN UP -->
-                    <form action="" class="sign-up-form">
+                    <form action="javascript:void(0)" class="sign-up-form" method="post">
         
                         <h2 class="title">Register</h2>
         
                         <div class="input-field">
                             <i class="fas fa-user"></i>
-                            <input type="text" placeholder="Username" maxlength="20" required>
+                            <input type="text" placeholder="Username" name="username" id="usernameRegister" maxlength="20" required>
                         </div>
                         <div class="input-field">
                             <i class="fas fa-envelope"></i>
-                            <input type="text" placeholder="Email" required>
+                            <input type="text" placeholder="Email" name="email" id="emailRegister" required>
                         </div>
                         <div class="input-field">
                             <i class="fas fa-lock"></i>
-                            <input type="password" placeholder="Password" required>
+                            <input type="password" placeholder="Password" id="passwordRegister" required>
                         </div>
         
-                        <input type="submit" value="Register" class="btn">
+                        <input type="submit" value="Register" class="btn" id="btnRegister">
         
                         <p class="account-text">Already have an account? <a href="index.html" id="sign-in-btn2">Login</a></p>
                     </form>
@@ -141,7 +144,7 @@
           <p class="slogan">Bite into Joyful Fast Fare Delights !</p>
           <p class="description">
             We're not just about delivering your favorite flavors at the speed
-            of a click; we're all about serving up convenience, quality, and
+            of a click, we're all about serving up convenience, quality, and
             taste in every order. With a passion for fast food and a commitment
             to your satisfaction, we've reimagined the way you enjoy your
             favorites. Join us on a journey where deliciousness meets the
@@ -225,7 +228,6 @@
             cravings are calling, and we're answering – one delicious deal at a
             time
           </p>
-          <a href="menu.html" class="order-button">Order Online</a>
       </div>
       <div class="order-online-image">
         <img src="assets/order.png" alt="order" />
@@ -233,17 +235,17 @@
     </section>
 
     <!--Contact us-->
-    <section id="contact-us">
+    <section id="contact-us"> 
       <div class="test">
         <div style="flex: 1">
           <div class="contact-us-text">
-            <h1 style="margin-right: 33%">CONTACT US</h1>
+            <h1 style="margin-right: 31%">CONTACT US</h1>
             <p class="information">DROP US A LINE AND WE’LL GET BACK TO YOU</p>
           </div>
           <div class="contact-form">
             <form>
               <label for="name">Name :</label>
-              <input type="text" id="name" name="name" required />
+              <input type="textContact" id="name" name="name" required />
               <br />
               <label for="message">Message :</label>
               <textarea id="message" name="message" rows="4" required></textarea>
@@ -319,6 +321,7 @@
     </footer>
 
     <!--Script login.js-->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
     <script src="js/login_register.js"></script>
 
     <!--Banner slides-->
@@ -345,6 +348,13 @@
         });
         document.getElementById("closeButton").addEventListener("click", function() {
             document.getElementById("loginPopup").style.display = "none";
+        });
+
+        const hamburgerMenu = document.querySelector('.hamburger-menu');
+        const navContent = document.querySelector('.navbar-content');
+
+        hamburgerMenu.addEventListener('click', () => {
+          navContent.classList.toggle('show');
         });
     </script>
   </body>

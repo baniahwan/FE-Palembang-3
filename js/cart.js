@@ -44,23 +44,58 @@ const categories = [...new Set(product.map((item)=>
     {return item}))]
     let i=0;
 
-document.getElementsByClassName('card-container')[0].innerHTML = categories.map((item)=>
-{
-    var {image, title, detail, price} = item;
-    return(
-        `<div class="card text-center card-food2 mt-5">
-        <div class="justify-content-center">
-        <img src=${image} class="card-img-top" alt="burger">
-    </div>
-        <div class="card-body">
-        <h5 class="card-title title2">${title}</h5>
-        <p class="price">Rp ${price}.000</p>
-        <p class="card-text">${detail}</p>
-        <a class='btn-box' onclick='addtocart("${i++}")'><i class='fa-solid fa-cart-shopping' style='color: #ffffff; margin-right: 7px;'></i> Add to Cart </a>                                        
-        </div>
-        </div>`
-    )
-}).join('')
+
+$(function() {
+    const searchParams = new URLSearchParams(window.location.search);
+    const type = searchParams.get('type');
+    $.ajax({
+        url: `https://dailydeals-api-production.up.railway.app/menu/${type}`,
+        dataType: 'json',
+        contentType: 'application/json; charset=utf-8',
+        success: function (response) {
+            let html = '';
+            $.each(response[0]['payload'], function(i, val) {
+                html += `<div class="card text-center card-food2 mt-5">
+                <div class="justify-content-center">
+                <img src=${val.gambar} class="card-img-top" alt="burger">
+            </div>
+                <div class="card-body">
+                <h5 class="card-title title2">${val.nama}</h5>
+                <p class="price">Rp ${new Intl.NumberFormat('id', {
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 2,
+                  })
+                    .format(val.harga)
+                    .replace(',', '.')}</p>
+                <p class="card-text">${val.deskripsi}</p>
+                <a class='btn-box' onclick='addtocart("${i++}")'><i class='fa-solid fa-cart-shopping' style='color: #ffffff; margin-right: 7px;'></i> Add to Cart </a>                                        
+                </div>
+                </div>`;
+            })
+
+            $('.card-container').html(html);
+        }
+    })
+    // console.log(new URLSearchParams(window.location.search));
+})
+
+// document.getElementsByClassName('card-container')[0].innerHTML = categories.map((item)=>
+// {
+//     var {image, title, detail, price} = item;
+//     return(
+//         `<div class="card text-center card-food2 mt-5">
+//         <div class="justify-content-center">
+//         <img src=${image} class="card-img-top" alt="burger">
+//     </div>
+//         <div class="card-body">
+//         <h5 class="card-title title2">${title}</h5>
+//         <p class="price">Rp ${price}.000</p>
+//         <p class="card-text">${detail}</p>
+//         <a class='btn-box' onclick='addtocart("${i++}")'><i class='fa-solid fa-cart-shopping' style='color: #ffffff; margin-right: 7px;'></i> Add to Cart </a>                                        
+//         </div>
+//         </div>`
+//     )
+// }).join('')
 
 var cart=[];
 
@@ -94,6 +129,11 @@ function displaycart() {
                     </div>
                     <p style='font-size: 15px;'>${title}</p>
                     <h2 style='font-size: 18px;'>Rp ${price}.000</h2>
+                    <div style='display: flex; flex-direction: row; gap: 0.8rem'>
+                        <button><i class="fa-solid fa-plus"></i></button>
+                        <p>1</p>
+                        <button><i class="fa-solid fa-minus"></i></button>
+                    </div>
                     <i class='fa-solid fa-trash' onclick='delElement("+ (j++) +")'></i>
                 </div>`
             );

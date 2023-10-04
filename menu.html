@@ -12,59 +12,72 @@
 </head>
 <body>
     <header class="navigation">
-        <img class="logo" src="assets/Logo.png" alt="Logo">
+        <a href="index.html">
+            <img class="logo" src="assets/Logo.png" alt="Logo">
+        </a>
         <nav class="navbar-container">
             <!-- Navbar -->
-            <div class="navbar-content">
-                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-                <a class="nav-link" href="#about-us">About</a>
-                <a class="nav-link" href="#favorite-menu">Menu</a>
-                <a class="nav-link" href="#order-online">Order Online</a>
-                <a class="nav-link" href="#contact-us">Contact</a>
-                <i class="fas fa-cart-shopping" style="color: #ffffff;"></i>
-                <i class="far fa-user" style="color: #ffffff;"></i>
-            </div>
-        </nav>
+            <button class="hamburger-menu"><i class="fa-solid fa-bars"></i></button>
+            <ul class="navbar-content">
+              <li><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
+              <li><a class="nav-link" href="#about-us">About</a></li>
+              <li><a class="nav-link" href="#favorite-menu">Menu</a></li>
+              <li><a class="nav-link" href="#order-online">Order</a></li>
+              <li><a class="nav-link" href="#contact-us">Contact</a></li>
+              <li><i class="fas fa-cart-shopping" style="color: #ffffff"></i></li>
+              <li><i class="far fa-user" style="color: #ffffff" id="loginButton"></i></li>
+            </ul>
+          </nav>
     </header>
    <br><br><br>
 
    <!--Menu Utama-->
     <section class="container-fluid">
         <div class="menu-title">
-            <h1>OUR MENU</h1>
+            <h1>OUR MENUS</h1>
         </div>
-        <div class="card-container">
-                <div class="card text-center card-food2 mt-5">
+        <!--Filter Category-->
+        <div class="categories-container">
+            <a href="#" class="category-option active" onclick="getMenu('all')">ALL</a>
+            <a href="#" class="category-option" onclick="getMenu('burger')">BURGERS</a>
+            <a href="#" class="category-option" onclick="getMenu('sandwich')">SANDWICHES</a>
+            <a href="#" class="category-option" onclick="getMenu('dessertAndDrink')">DESSERTS & DRINKS</a>
+            <a href="#" class="category-option" onclick="getMenu('sides')">SIDES</a>
+
+        </div>
+        
+        <div class="card-container" id="cardContent">
+                <!-- <div class="card text-center card-food2 mt-5">
                     <div class="justify-content-center">
                         <img src="assets/Cheeseburger.jpg" class="card-img-top" alt="burger">
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title title2">BURGER</h5>
-                        <p class="card-text">Discover burger bliss with our mouthwatering selection of Burgers. Crafted with passion and quality ingredients, delivering the perfect blend of flavors and satisfaction in every bite. </p>
+                        <h5 class="card-title title2">BURGERS</h5>
+                        <p class="card-text">Discover burger bliss with our mouthwatering selection of Burgers. Crafted with passion and quality ingredients, delivering the perfect blend of flavors and satisfaction in every bite.</p>
                         <a href="burger.html" class="btn-box">Full Menu</a>
                     </div>
                 </div>
-                <div class="card text-center card-food2 mt-5">
+                <div class="card text-center card-food2 mt-5"data-category="sandwich">
                     <div class="justify-content-center">
                         <img src="assets/sandwich.jpg" class="card-img-top" alt="sandwich">
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title title2">SANDWICH</h5>
+                        <h5 class="card-title title2">SANDWICHES</h5>
                         <p class="card-text">Experience the art of sandwich perfection with our Sandwiches. Our menu offers a delectable range of options that will satisfy your taste buds and leave you craving for more.</p>
                         <a href="sandwich.html" class="btn-box">Full Menu</a>
                     </div>
                 </div>
-                <div class="card text-center card-food2 mt-5">
+                <div class="card text-center card-food2 mt-5" data-category="dessert&drinks">
                     <div class="justify-content-center">
                         <img src="assets/milkshake.jpeg" class="card-img-top" alt="milkshake">
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title title2">DESSERT & DRINK</h5>
+                        <h5 class="card-title title2">DESSERTS & DRINKS</h5>
                         <p class="card-text">Indulge in sweet perfection with our Desserts and quench your thirst with our Drinks. Our menu offers a delightful array of choices that will satisfy your cravings in the most delicious way possible.</p>
                         <a href="DessertDrink.html" class="btn-box">Full Menu</a>
                     </div>
                 </div>
-                <div class="card text-center card-food2 mt-5">
+                <div class="card text-center card-food2 mt-5" data-category="sides">
                     <div class="justify-content-center">
                         <img src="assets/kentang.jpg" class="card-img-top" alt="kentang">
                     </div>
@@ -73,13 +86,52 @@
                         <p class="card-text">Elevate your meal experience with our delectable Side Dishes – the perfect companions to your main course. Our sides add a burst of flavor, variety, and freshness to every bite.</p>
                         <a href="sides.html" class="btn-box">Full Menu</a>
                     </div>
-                </div>
+                </div> -->
             </div>
     </section>
 
     <!--Footer-->
     <footer>
         <h5 class="footer-text">Copyright &copy;2023 Daily Deals</h5>
-    </footer>        
+    </footer> 
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script>
+        $(function() {
+            getMenu('all');
+        })
+        function getMenu(category) {
+            $.ajax({
+                url: category === 'all' ? `https://dailydeals-api-production.up.railway.app/menu` : `https://dailydeals-api-production.up.railway.app/menu/${category}`,
+                dataType: 'json',
+                contentType: 'application/json; charset=utf-8',
+                beforeSend: function() {
+                    $('#cardContent').html('');
+                },
+                success: function(response) {
+                    let html = '';
+                    $.each(response[0]['payload'], function(i, val) {
+                        html += `<div class="card text-center card-food2 mt-5">
+                    <div class="justify-content-center">
+                        <img src="${val.gambar}" class="card-img-top" alt="burger">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title title2">${val.nama}</h5>
+                        <p class="card-text">${val.deskripsi}</p>
+                    </div>
+                </div>`;
+                    })
+
+                    $('#cardContent').html(html);
+                }
+            })
+        }
+        const hamburgerMenu = document.querySelector('.hamburger-menu');
+        const navContent = document.querySelector('.navbar-content');
+
+        hamburgerMenu.addEventListener('click', () => {
+          navContent.classList.toggle('show');
+        });
+    </script>
 </body>
 </html>
