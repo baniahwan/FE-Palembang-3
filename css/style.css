@@ -44,9 +44,20 @@ body {
     margin-bottom: 40px;
 }
 
+/* CSS untuk tombol "Account" */
+.account-button {
+    background-color: #765827; 
+    color: #ffffff; 
+    border: none; 
+    padding: 10px 20px; 
+    font-weight: bold; 
+    font-size: 16px; 
+    cursor: pointer; 
+    border-radius: 30px;
+}
+
 .navbar-content {
     color: var(--muda);
-    
 }
 
 .navbar-content a {
@@ -59,7 +70,7 @@ body {
 
 .navbar-content a:hover {
     color: #C8AE7D;
-    border-bottom: 3px solid #C8AE7D !important;
+    border-bottom: 3px solid #C8AE7D;
 }
 
 .navbar-content i:hover {
@@ -83,7 +94,7 @@ body {
 
 /*about us*/
 .about-img {
-    width: 375px;
+    width: 31%;
     height: auto;
     margin-left: auto;
     margin-right: auto;
@@ -196,8 +207,8 @@ body {
 
 .card-img-top{
     border-radius: 50%;
-    width: 160px;
-    height: 160px;
+    width: 140px;
+    height: 140px;
     margin-top: -50px;
     object-fit: cover;
 }
@@ -214,7 +225,9 @@ body {
 .card-text{
     font-weight: lighter;
     margin-top: 15px;
-    font-size: 13px;
+    font-size: 12px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 .card-text2{
@@ -225,7 +238,7 @@ body {
 
 .card-food{
     width: 19rem;
-    height: 17rem;
+    height: 19rem;
     margin: 40px;
     background-color: #765827;
     border-radius: 10%;
@@ -377,135 +390,6 @@ body {
     border: 2px solid black;
 }
 
-.payment-title h1{
-    margin-top: 40px;
-    margin-bottom: 60px;
-    margin-left: 60px;
-    text-align: left;
-    font-weight: 800;
-    font-size: 29px;
-    font-family: 'Poppins', sans-serif; 
-}
-
-#cart-container-payment{
-    width: 70%;
-    border-radius: 5px;
-    max-width: 900px; 
-    background-color: #eee;
-    padding: 15px;
-    text-align: center;
-    border: 3px solid goldenrod;
-    top: 30%; 
-    right: 15%;
-    position: absolute;
-}
-.rowimg-payment {
-    max-width: 90px; 
-    max-height: 110px; 
-    width: auto;
-    height: auto;
-    margin-left: 40px;
-    border-radius: 50%;
-}
-.burger-name {
-    float: none; 
-    margin-right: 10px;
-    margin-top: -30px; /* Sesuaikan nilai ini sesuai dengan kebutuhan Anda */
-    margin-bottom: 10px;
-    font-weight: 900;
-}
-.price-payment {
-    float: right;
-    position: relative;
-    margin-top: -30px; /* Menggeser .price ke atas dengan nilai negatif */
-    margin-bottom: 10px;
-    margin-right: 20px;
-}
-.cart-foot-payment{
-    display: flex;
-    justify-content: space-between;
-    margin: 40px 0px;
-    padding: 20px 0px;
-    width: 100%;
-    border-top: 1.5px solid #333;
-}
-/* Virtual bank */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.6);
-  }
-  
-  .modal-content {
-    background-color: #F8F0E5;
-    margin: 10% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 60%;
-    border-radius: 15px;
-  }
-  
-  .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  
-  label {
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 8px;
-    display: block;
-    color: black;
-  }
-  
-  input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid black;
-    border-radius: 3px;
-    font-size: 16px;
-    color: #333;
-  }
-  
-  #checkoutButtonBank {
-    background-color: black; 
-    color: #fff; 
-    padding: 9px 9px; 
-    border: none;
-    border-radius: 5px; 
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 5px; 
-    font-weight: 600;
-}
-
-#paymentForm {
-    max-width: 500px; 
-    margin: 5px auto; 
-  }
-
-  input[type="text"]::placeholder {
-    font-size: 15px; 
-    color: #ccc; 
-  }
-
 /*contact-us*/
 form {
     display: flex;
@@ -518,9 +402,9 @@ label {
     font-weight: bold;
 }
 
-input[type="text"],
+input[type="textContact"],
 textarea {
-    width: 40%;
+    width: 52%;
     padding: 10px;
     margin-bottom: 2px;
     border: 1px solid black;
@@ -550,7 +434,7 @@ textarea {
     margin-top: 10px;
     font-weight: 500;
     font-family: 'Poppins', sans-serif;
-    margin-left: 63px; 
+    margin-left: 70px; 
 }
 
 .submit-button {
@@ -603,7 +487,24 @@ textarea {
     margin-left: 70px; 
     font-size: 15px;
 }
+/*Filter Category*/
+.categories-container {
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 50px;
+}
 
+.category-option {
+    margin: 5px;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+.category-option:hover {
+    border-bottom: 2px solid #333;
+
+}
 
 /*footer*/
 .footer-text{
@@ -729,7 +630,135 @@ textarea {
   position: relative; /* All 'absolute'ly positioned elements are relative to this one */
   padding: 2px 5px;
 }
+/*payment*/
+.payment-title h1{
+    margin-top: 40px;
+    margin-bottom: 60px;
+    margin-left: 60px;
+    text-align: left;
+    font-weight: 800;
+    font-size: 29px;
+    font-family: 'Poppins', sans-serif; 
+}
 
+#cart-container-payment{
+    width: 70%;
+    border-radius: 5px;
+    max-width: 900px; 
+    background-color: #eee;
+    padding: 15px;
+    text-align: center;
+    border: 3px solid goldenrod;
+    top: 30%; 
+    right: 15%;
+    position: absolute;
+}
+.rowimg-payment {
+    max-width: 90px; 
+    max-height: 110px; 
+    width: auto;
+    height: auto;
+    margin-left: 40px;
+    border-radius: 50%;
+}
+.burger-name {
+    float: none; 
+    margin-right: 10px;
+    margin-top: -30px; /* Sesuaikan nilai ini sesuai dengan kebutuhan Anda */
+    margin-bottom: 10px;
+    font-weight: 900;
+}
+.price-payment {
+    float: right;
+    position: relative;
+    margin-top: -30px; /* Menggeser .price ke atas dengan nilai negatif */
+    margin-bottom: 10px;
+    margin-right: 20px;
+}
+.cart-foot-payment{
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 0px;
+    padding: 20px 0px;
+    width: 100%;
+    border-top: 1.5px solid #333;
+}
+/* Virtual bank */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  
+  .modal-content {
+    background-color: #F8F0E5;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+    border-radius: 15px;
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    display: block;
+    color: black;
+  }
+  
+  input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid black;
+    border-radius: 3px;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  #checkoutButtonBank {
+    background-color: black; 
+    color: #fff; 
+    padding: 9px 9px; 
+    border: none;
+    border-radius: 5px; 
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 5px; 
+    font-weight: 600;
+}
+
+#paymentForm {
+    max-width: 500px; /* Menentukan lebar maksimum formulir */
+    margin: 5px auto; /* Menengahkan formulir */
+  }
+
+  input[type="text"]::placeholder {
+    font-size: 15px; 
+    color: #ccc; 
+  }
 /*Login Register*/
 .container {
     position: relative;
@@ -1030,6 +1059,42 @@ form.sign-up-form {
     color: white; 
     z-index: 9;
 }
+
+.hamburger-menu {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+.navbar-content {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Mengatur elemen-elemen di tengah secara horizontal */
+}
+
+.navbar-content li {
+  margin-right: 20px;
+}
+
+.navbar-content a {
+  text-decoration: none;
+  color: #fff;
+}
+
 /*Continue to Checkout */
 #checkoutButton {
     background-color: goldenrod; 
@@ -1048,10 +1113,157 @@ form.sign-up-form {
 }
 
 /* ukuran tablet */
-@media (min-width: 577px) and (max-width: 992px) {
+@media (max-width: 992px) {
     /* Your CSS rules for small screens (tablets in portrait) */
-  }
+    .navbar-content {
+        display: none;
+    }
+
+    .hamburger-menu { 
+        display: block;
+    }
+
+    .navbar-content.show {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 55px;
+        right: 10px;
+        background-color: #D8BF90;
+        z-index: 1;
+        width: 10rem;
+        padding-top: 1rem;
+        color: #3F2407;
+        border-radius: 10px;
+    }
+
+    .navbar-content.show li {
+        margin-right: 0;
+        margin-bottom: 10px;
+        float: left;
+    }
+
+    .navbar-content a:hover {
+        color: #3F2407 !important;
+        border-bottom: 3px solid #3F2407 !important;
+        padding-bottom: .2rem;
+    }
+    
+    .navbar-content i:hover {
+        color: #3F2407 !important;
+        cursor: pointer;
+        
+    }
+    .navbar-content a {
+        text-decoration: none;
+        color:#3F2407;
+    }
+    
+    .description {
+        text-align: justify;
+        margin: 20px 0;
+        font-weight: 600;
+        color: #000000;
+        padding: 1rem;
+        line-height: 1.4;
+        margin-bottom: 5%;
+        border-bottom: 7px solid #C8AE7D;
+        padding-bottom: 1rem;
+    }
+    .weopen-us-text {
+        width: 70%;
+        text-align: center;
+        padding: 20px;
+        margin-top: 5px;  
+        font-size: large;
+        margin-left: 15px;
+    }
+
+    .information-open{
+        text-align: left;
+        color: #000000;
+        margin-top: 10px;
+        font-weight: 500;
+        font-family: 'Poppins', sans-serif;
+        margin-left: 7px; 
+        font-size: 15px;
+    }
+    input[type="text"],
+    textarea {
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 2px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.contact-us-text h1{
+    text-align: center;
+    color: #3F2407;
+    margin-top: 10px;
+    font-weight: 900;
+    font-family: 'Poppins', sans-serif; 
+   margin-left: 58px;
+}
+
+    
+}
+
 /* ukuran mobile */
-  @media (max-width: 576px) {
+@media (max-width: 576px) {
     /* Your CSS rules for extra small screens */
-  }
+    .navbar-content {
+        display: none;
+    }
+
+    .hamburger-menu { 
+        display: block;
+    }
+
+    .navbar-content.show {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 55px;
+        right: 10px;
+        background-color: #D8BF90;
+        z-index: 1;
+        width: 10rem;
+        padding-top: 1rem;
+        color: #3F2407;
+        border-radius: 10px;
+    }
+
+    .navbar-content.show li {
+        margin-right: 0;
+        margin-bottom: 10px;
+        float: left;
+    }
+
+    .navbar-content a:hover {
+        color: #3F2407 !important;
+        border-bottom: 3px solid #3F2407 !important;
+        padding-bottom: .2rem;
+    }
+    
+    .navbar-content i:hover {
+        color: #3F2407 !important;
+        cursor: pointer;
+        
+    }
+    .far fa-user{
+        color: #3F2407;
+    }
+
+    .description {
+        text-align: justify;
+        margin: 20px 0;
+        font-weight: 600;
+        color: #000000;
+        padding: 1rem;
+        line-height: 1.4;
+        margin-bottom: 5%;
+        border-bottom: 7px solid #C8AE7D;
+        padding-bottom: 1rem;
+    }
+}

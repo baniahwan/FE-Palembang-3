@@ -22,3 +22,36 @@ sign_up_btn2.addEventListener("click", () => {
 sign_in_btn2.addEventListener("click", () => {
     container.classList.remove("sign-up-mode2");
 });
+
+$('#btnLogin').on('click',function() {
+    $.ajax({
+        url: 'https://dailydeals-api-production.up.railway.app/login',
+        type: 'POST',
+        data: JSON.stringify({
+            username: $('#usernameLogin').val(),
+            password: $('#passwordLogin').val()
+        }),
+        dataType: 'json',
+        contentType: 'application/json; charset=utf-8',
+        success: function (response) {
+            console.log(response);
+        }
+    })
+})
+
+$('#btnRegister').on('click', function() {
+    $.ajax({
+        url: 'https://dailydeals-api-production.up.railway.app/register',
+        type: 'POST',
+        data: JSON.stringify({
+            username: $('#usernameRegister').val(),
+            password: $('#passwordRegister').val(),
+            email: $('#emailRegister').val()
+        }),
+        dataType: 'json',
+        contentType: 'application/json; charset=utf-8',
+        success: function (response) {
+            console.log(response);
+        }
+    })
+})
