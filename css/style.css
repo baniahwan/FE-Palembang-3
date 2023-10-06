@@ -535,7 +535,7 @@ textarea {
 }
 
 #cart-container{
-    width: 30%;
+    width: 35%;
     border-radius: 5px;
     background-color: #eee;
     padding: 15px;
@@ -544,7 +544,9 @@ textarea {
     z-index: 4;
     top: 59px;
     right: 10px;
-    position: absolute;
+    position: fixed;
+    max-width: 76%;
+    overflow: auto;
 }
 
 #logout-container {
@@ -740,6 +742,16 @@ textarea {
   }
   
   input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid black;
+    border-radius: 3px;
+    font-size: 16px;
+    color: #333;
+  }
+
+  #payment{
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
@@ -1214,7 +1226,7 @@ form.sign-up-form {
         font-size: 15px;
     }
     input[type="text"],
-    textarea {
+    textarea, #payment {
     width: 50%;
     padding: 10px;
     margin-bottom: 2px;

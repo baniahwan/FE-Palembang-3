@@ -72,8 +72,11 @@
             </div>
         </div>
         <div class="cart-foot-payment" style="margin-top: 10%;">
-            <h3>Total</h3>
-            <h2 id="total">Rp 231.000</h2>
+            <h3>Total Item :</h3>
+            <h2 id="total">3</h2>
+            <h1>|</h1>
+            <h3>Total Harga :</h3>
+            <h2 id="total">Rp 202.000</h2>
         </div>
         <div>
             <button id="checkoutButton">Pay with Virtual Bank</button>
@@ -82,11 +85,14 @@
             <div class="modal-content">
               <span class="close" id="closePaymentModal">&times;</span>
               <h2>PAYMENT</h2>
-              <form id="paymentForm">
-                <label for="bankName" style="text-align: left; margin-top: 20px;" >Bank Name   :</label>
-                <input type="text" id="bankName" name="bankName" required placeholder="Enter Bank Name">
-                <label for="accountNumber" style="text-align: left;">Account Number  :</label>
-                <input type="text" id="accountNumber" name="accountNumber" required placeholder="Enter Account Number">
+              <form id="paymentForm" required placeholder="Choose Payment Method">
+                <label for="bankName" style="text-align: left; margin-top: 20px;" >Choose Payment Method   :</label>
+                <select id="payment">
+                    <option value="GOPAY">GOPAY</option>
+                    <option value="OVO">OVO</option>
+                    <option value="DANA">DANA</option>
+                    <option value="PAYLATER">PAYLATER</option>
+                </select>
                 <label for="" style="text-align: left; margin-top: 5px;" >Shipping Adress   :</label>
                 <input type="text" id="shippingAdress" name="shippingAdress" required placeholder="Enter Shipping Adress">
               </form>
