@@ -25,9 +25,11 @@
           <li><a class="nav-link" href="#order-online">Order</a></li>
           <li><a class="nav-link" href="#contact-us">Contact</a></li>
           <li><span class="account-button hide"></span></li>
+          <!--Icon Keranjang-->
           <div class="button">
             <i class="fas fa-cart-shopping" style="color: #ffffff;"><span id="cart-count">0</span></i>
           </div>
+          <!--Icon User-->
           <li>
             <i class="far fa-user" style="color: #ffffff" id="loginButton"></i>
           </li>
@@ -52,6 +54,7 @@
 
       <div class="card-container" id="cardContent"></div>
 
+      <!--Login Register section-->
       <div class="popup" id="loginPopup">
         <div class="popup-content">
           <div class="container">
@@ -74,7 +77,6 @@
                   <a href="#" id="sign-up-btn2">Register</a>
                 </p>
               </form>
-
               <!-- SIGN UP -->
               <form action="javascript:void(0)" class="sign-up-form" method="post">
                 <h2 class="title">Register</h2>
@@ -97,7 +99,6 @@
                 </p>
               </form>
             </div>
-
             <!-- PANEL -->
             <div class="panels-container">
               <div class="panel left-panel">
@@ -126,6 +127,7 @@
       </div>
     </section>
 
+    <!-- Bagian kontainer keranjang belanja -->
     <section id="cart-container" class="hidden">
       <div class="cart-head">
         <p>My Cart</p>
@@ -135,6 +137,7 @@
         <h3>Total</h3>
         <h2 id="total"></h2>
       </div>
+      <!-- Tombol untuk melanjutkan ke halaman pembayaran -->
       <div>
         <a href="payment.html">
           <button id="checkoutButton">Continue to Checkout</button>
@@ -246,16 +249,12 @@
         }
 
       //menampilkan modal login
-      document
-        .getElementById("loginButton")
-        .addEventListener("click", function () {
+      document.getElementById("loginButton").addEventListener("click", function () {
           if (!localStorage.getItem("uname")) {
             document.getElementById("loginPopup").style.display = "block";
           }
         });
-      document
-        .getElementById("closeButton")
-        .addEventListener("click", function () {
+      document.getElementById("closeButton").addEventListener("click", function () {
           document.getElementById("loginPopup").style.display = "none";
         });
 

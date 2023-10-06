@@ -8,22 +8,11 @@
     <!-- Link to Font Awesome icons -->
     <script src="https://kit.fontawesome.com/cf76925589.js"></script>
     <!-- Link to Google Fonts - Montserrat -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
     <!-- Link to Font Awesome CSS -->
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
     <!-- Link to Google Fonts - Poppins -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap" rel="stylesheet"/>
 
     <link rel="stylesheet" href="css/style.css" />
 
@@ -34,7 +23,7 @@
     <header class="navigation">
       <img class="logo" src="assets/Logo.png" alt="Logo" />
       <nav class="navbar-container">
-        <!-- Navbar -->
+        <!-- Navbar section-->
         <button class="hamburger-menu"><i class="fa-solid fa-bars"></i></button>
         <ul class="navbar-content">
           <li>
@@ -52,103 +41,51 @@
       </nav>
     </header>
 
-    <!--Login Register-->
+    <!--Login Register section-->
     <div class="popup" id="loginPopup">
       <div class="popup-content">
         <div class="container">
           <span class="close" id="closeButton">&times;</span>
           <div class="signin-signup">
             <!-- SIGN IN -->
-            <form
-              action="javascript:void(0)"
-              class="sign-in-form"
-              method="post"
-            >
+            <form action="javascript:void(0)" class="sign-in-form" method="post">
               <h2 class="title">Login</h2>
               <div class="input-field">
                 <i class="fas fa-user"></i>
-                <input
-                  type="text"
-                  placeholder="Username"
-                  name="username"
-                  id="usernameLogin"
-                  maxlength="20"
-                  required
-                />
+                <input type="text" placeholder="Username" name="username" id="usernameLogin" maxlength="20" required/>
               </div>
-
               <div class="input-field">
                 <i class="fas fa-lock"></i>
-                <input
-                  type="password"
-                  placeholder="Password"
-                  name="password"
-                  id="passwordLogin"
-                  required
-                />
+                <input type="password" placeholder="Password" name="password" id="passwordLogin" required/>
               </div>
-
               <input type="submit" value="Login" class="btn" id="btnLogin" />
-
               <p class="account-text">
                 Don't have an account?
                 <a href="#" id="sign-up-btn2">Register</a>
               </p>
             </form>
-
             <!-- SIGN UP -->
-            <form
-              action="javascript:void(0)"
-              class="sign-up-form"
-              method="post"
-            >
+            <form action="javascript:void(0)" class="sign-up-form" method="post">
               <h2 class="title">Register</h2>
-
               <div class="input-field">
                 <i class="fas fa-user"></i>
-                <input
-                  type="text"
-                  placeholder="Username"
-                  name="username"
-                  id="usernameRegister"
-                  maxlength="20"
-                  required
-                />
+                <input type="text" placeholder="Username" name="username" id="usernameRegister" maxlength="20" required/>
               </div>
               <div class="input-field">
                 <i class="fas fa-envelope"></i>
-                <input
-                  type="text"
-                  placeholder="Email"
-                  name="email"
-                  id="emailRegister"
-                  required
-                />
+                <input type="text" placeholder="Email" name="email" id="emailRegister" required/>
               </div>
               <div class="input-field">
                 <i class="fas fa-lock"></i>
-                <input
-                  type="password"
-                  placeholder="Password"
-                  id="passwordRegister"
-                  required
-                />
+                <input type="password" placeholder="Password" id="passwordRegister" required/>
               </div>
-
-              <input
-                type="submit"
-                value="Register"
-                class="btn"
-                id="btnRegister"
-              />
-
+              <input type="submit" value="Register" class="btn" id="btnRegister"/>
               <p class="account-text">
                 Already have an account?
                 <a href="index.html" id="sign-in-btn2">Login</a>
               </p>
             </form>
           </div>
-
           <!-- PANEL -->
           <div class="panels-container">
             <div class="panel left-panel">
@@ -194,15 +131,11 @@
       </div>
     </section>
 
-    <!--About us-->
+    <!--About us Section-->
     <section id="about-us">
       <div class="about-text">
         <div>
-          <img
-            class="about-img"
-            src="assets/gambarabout.png"
-            alt="gambar about us"
-          />
+          <img class="about-img" src="assets/gambarabout.png" alt="gambar about us"/>
           <h2>ABOUT US</h2>
           <p class="slogan">Bite into Joyful Fast Fare Delights !</p>
           <p class="description">
@@ -218,20 +151,17 @@
       </div>
     </section>
 
-    <!--Favorite Menu-->
+    <!--Favorite Menu Section-->
     <section id="favorite-menu" class="container-fluid">
       <div class="menu-text text-center">
         <h1>ALL FAVORITE MENU</h1>
         <p class="report">An Endless Love for Timeless Tastes</p>
       </div>
+    
       <div class="card-container">
         <div class="card text-center card-food mt-5">
           <div class="justify-content-center">
-            <img
-              src="assets/milkshake.jpeg"
-              class="card-img-top"
-              alt="milkshake"
-            />
+            <img src="assets/milkshake.jpeg" class="card-img-top" alt="milkshake"/>
           </div>
           <div class="card-body">
             <h5 class="card-title title2">MILKSHAKE OREO</h5>
@@ -244,11 +174,7 @@
         </div>
         <div class="card text-center card-food mt-5">
           <div class="justify-content-center">
-            <img
-              src="assets/Cheeseburger.jpg"
-              class="card-img-top"
-              alt="Burger"
-            />
+            <img src="assets/Cheeseburger.jpg" class="card-img-top" alt="Burger"/>
           </div>
           <div class="card-body">
             <h5 class="card-title title2">CHEESE BURGER</h5>
@@ -279,9 +205,10 @@
         </a>
         <br /><br />
       </div>
+      
     </section>
 
-    <!--Order Online-->
+    <!--Order Online Section-->
     <section id="order-online" class="order-online-container">
       <div class="order-online-text">
         <h1>WE DELIEVER</h1>
@@ -297,7 +224,7 @@
       </div>
     </section>
 
-    <!--Contact us-->
+    <!--Contact us Section-->
     <section id="contact-us">
       <div class="test">
         <div style="flex: 1">
@@ -308,15 +235,9 @@
           <div class="contact-form">
             <form>
               <label for="name">Name :</label>
-              <input type="textContact" id="name" name="name" required />
-              <br />
+              <input type="textContact" id="name" name="name" required /><br />
               <label for="message">Message :</label>
-              <textarea
-                id="message"
-                name="message"
-                rows="4"
-                required
-              ></textarea>
+              <textarea id="message" name="message" rows="4"required></textarea>
               <br /><br />
             </form>
           </div>
@@ -336,11 +257,7 @@
     </section>
 
     <!--Founder Team Section-->
-    <section
-      id="team"
-      class="team"
-      style="background-color: #c8ae7d; padding: 30px"
-    >
+    <section id="team" class="team" style="background-color: #c8ae7d; padding: 30px">
       <h2>THE FOUNDERS</h2>
       <p>“It’s not about ideas. It’s about making ideas happen.”</p>
 
@@ -383,6 +300,7 @@
       </div>
     </section>
 
+    <!--Logout-->
     <section id="logout-container" class="hidden">
       <button id="logoutButton">Logout</button>
     </section>
@@ -400,7 +318,7 @@
     <script>
       var slideIndex = 0;
       showSlides();
-
+      //membuat tampilan slide (slideshow) pada halaman web yang bergerak setiap 3 detik
       function showSlides() {
         var i;
         var slides = document.getElementsByClassName("slides");
@@ -415,12 +333,12 @@
         setTimeout(showSlides, 3000); // Ganti gambar setiap 3 detik
       }
 
-      document
-        .getElementById("loginButton")
-        .addEventListener("click", function () {
+      document.getElementById("loginButton").addEventListener("click", function () {
+        //mengendalikan tampilan popup login ketika pengguna belum masuk (tidak ada username yang tersimpan di local storage).
           if (!localStorage.getItem("uname")) {
             document.getElementById("loginPopup").style.display = "block";
           } else {
+          //mengendalikan tampilan elemen "logout-container" ketika pengguna sudah masuk (ada username yang tersimpan di local storage).
             const cartContainer = document.getElementById("logout-container");
             if (cartContainer.classList.contains("hidden")) {
               cartContainer.classList.remove("hidden");
@@ -429,12 +347,13 @@
             }
           }
         });
-      document
-        .getElementById("closeButton")
-        .addEventListener("click", function () {
+
+      // Menutup popup login ketika tombol dengan ID "closeButton" diklik.
+      document.getElementById("closeButton").addEventListener("click", function () {
           document.getElementById("loginPopup").style.display = "none";
         });
 
+      //// Mengatur event listener untuk tombol logout
       document.getElementById("logoutButton").addEventListener('click', function() {
         localStorage.removeItem('uname');
         if (window.location.pathname === '/index.html') {
@@ -443,8 +362,6 @@
           window.localStorage.href = '/index.html';
         }
       })
-
-      
 
       const hamburgerMenu = document.querySelector(".hamburger-menu");
       const navContent = document.querySelector(".navbar-content");
