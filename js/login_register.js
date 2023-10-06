@@ -44,8 +44,10 @@ $('#btnLogin').on('click',function() {
         dataType: 'json',
         contentType: 'application/json; charset=utf-8',
         success: function (response) {
+            // console.log(response)
             if (response[0]['message'] === 'Login Successful') {
                 localStorage.setItem('uname', response[0]['payload']['username']);
+                localStorage.setItem('id', response[0]['payload']['id']);
                 window.location.href = '/index.html'
             }
         }
