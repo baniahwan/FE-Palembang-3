@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Receipt</title>
+    <link rel="stylesheet" href="css/receipt.css">
+    <link rel="shortcut icon" type="x-icon" href="assets/LogoIcon.png" 
+</head>
+<body>
+    <div class="receipt">
+        <h1>Receipt</h1>
+        <div class="payment-success" style="color: green; font-size: 12px; ">
+            <h3><span class="checkmark">&#10004;</span> Payment Success</h3>
+        </div>
+
+        <!-- Form pengirim -->
+        <div class="sender-info" style="font-size: 10px; float: right;">
+            <h2>Sender  : Daily Deals</h2>
+        </div>
+
+        <!-- Tabel pesanan -->
+        <table class="order-table">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Chicken Burger</td>
+                    <td>1x</td>
+                    <td>Rp 55.000</td>
+                </tr>
+                <tr>
+                    <td>Cheese Burger</td>
+                    <td>1x</td>
+                    <td>Rp 65.000</td>
+                </tr>
+                <tr>
+                    <td>Burger Bacon</td>
+                    <td>1x</td>
+                    <td>Rp 70.000</td>
+                </tr>
+               
+            </tbody>
+        </table>
+        <!-- Total -->
+        <div class="total" style="font-size: 10px;">
+            <h2 id="total-receipt"></h2>
+        </div>
+
+        <div style="text-align: center;">
+            <h3>Thank You for Choosing Daily Deals!</h1>
+        </div>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+<script>
+    $(function() {
+        $.ajax({
+            url: `https://dailydeals-api-production.up.railway.app/checkout/user/${localStorage.getItem('id')}`,
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            success: function(response) {
+                console.log(response.data);
+                let html = '';
+                $.each(response.data.details, function(i, val) {
+                    html += ` <tr>
+                    <td>${val.nama}</td>
+                    <td>${val.jumlah_item}</td>
+                    <td>Rp ${new Intl.NumberFormat("id", {
+              minimumFractionDigits: 0,
+              maximumFractionDigits: 2,
+            })
+              .format(val.total_harga)
+              .replace(",", ".")}</td>
+                </tr>`;
+                })
+                html += ` <tr>
+                    <td>Shipping</td>
+                    <td>-</td>
+                    <td>Rp 12.000</td>
+                </tr>`;
+                $('tbody').html(html);
+                $('#total-receipt').text(`Total: Rp ${new Intl.NumberFormat("id", {
+              minimumFractionDigits: 0,
+              maximumFractionDigits: 2,
+            })
+              .format(response.data.total_harga_diKeranjang)
+              .replace(",", ".")}`)
+            }
+        })
+    })
+</script>
+</body>
+</html>
