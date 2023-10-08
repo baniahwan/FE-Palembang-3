@@ -44,41 +44,6 @@ const categories = [...new Set(product.map((item)=>
     {return item}))]
     let i=0;
 
-
-$(function() {
-    const searchParams = new URLSearchParams(window.location.search);
-    const type = searchParams.get('type');
-    $.ajax({
-        url: `https://dailydeals-api-production.up.railway.app/menu/${type}`,
-        dataType: 'json',
-        contentType: 'application/json; charset=utf-8',
-        success: function (response) {
-            let html = '';
-            $.each(response[0]['payload'], function(i, val) {
-                html += `<div class="card text-center card-food2 mt-5">
-                <div class="justify-content-center">
-                <img src=${val.gambar} class="card-img-top" alt="burger">
-            </div>
-                <div class="card-body">
-                <h5 class="card-title title2">${val.nama}</h5>
-                <p class="price">Rp ${new Intl.NumberFormat('id', {
-                    minimumFractionDigits: 0,
-                    maximumFractionDigits: 2,
-                  })
-                    .format(val.harga)
-                    .replace(',', '.')}</p>
-                <p class="card-text">${val.deskripsi}</p>
-                <a class='btn-box' onclick='addtocart("${i++}")'><i class='fa-solid fa-cart-shopping' style='color: #ffffff; margin-right: 7px;'></i> Add to Cart </a>                                        
-                </div>
-                </div>`;
-            })
-
-            $('.card-container').html(html);
-        }
-    })
-    // console.log(new URLSearchParams(window.location.search));
-})
-
 // document.getElementsByClassName('card-container')[0].innerHTML = categories.map((item)=>
 // {
 //     var {image, title, detail, price} = item;
@@ -109,6 +74,7 @@ function delElement(a){
     displaycart();
 }
 
+//Menampilkan cart sesuai dengan  pesanan dari user
 function displaycart() {
     let j = 0, total = 0;
     document.getElementById("cart-count").innerHTML = cart.length;
