@@ -606,9 +606,12 @@ textarea {
 }
 
 .rowimg{
-    max-width: 43px;
-    max-height: 43px;
+    max-width: 75px;
+    max-height: 75px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
+    border: 3px solid goldenrod;
 }
 
 .fa-trash:hover{
@@ -665,14 +668,16 @@ textarea {
     top: 30%; 
     right: 15%;
     position: absolute;
+    z-index: -4;
 }
 .rowimg-payment {
     max-width: 90px; 
     max-height: 110px; 
-    width: auto;
-    height: auto;
+    width: 75px;
+    height: 75px;
     margin-left: 40px;
     border-radius: 50%;
+    border: 3px solid goldenrod;
 }
 .burger-name {
     float: none; 
@@ -1303,4 +1308,8 @@ form.sign-up-form {
         border-bottom: 7px solid #C8AE7D;
         padding-bottom: 1rem;
     }
+}
+
+#cartItem{
+    margin-top: 40px;
 }
