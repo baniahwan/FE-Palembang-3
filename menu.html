@@ -167,6 +167,7 @@
           $("span.account-button").text("");
         }
 
+        
         //menampilkan data keranjang jika user yang sudah login
         if (localStorage.getItem('uname')) {
           $.ajax({
@@ -188,6 +189,7 @@
                         })
                           .format(val.total_harga)
                           .replace(",", ".")}</h2>
+                    <i class='fa-solid fa-trash' onclick='deleteCart(${val.id_keranjang})'></i>
                 </div>`;
               })
               $('#cartItem').html(html);
@@ -202,6 +204,7 @@
           })
         }
       });
+
 
       // Menampilkan parameter category = all (menampilkan semua menu), jika parameter bukan all (menampilkan setiap kategori menu )
       function getMenu(category) {
@@ -289,6 +292,19 @@
         if (qty > 1) {
           $(`#text${id_menu}`).text(qty - 1);
         }
+      }
+
+      //Menghapus item di keranjang
+      function deleteCart(id_keranjang) {
+        $.ajax({
+          url: `https://dailydeals-api-production.up.railway.app/deleteitemcart/${id_keranjang}`,
+          type: 'DELETE',
+          dataType: "json",
+          contentType: "application/json; charset=utf-8",
+          success: function (response) {
+            window.location.reload();
+          }
+        })
       }
 
       const hamburgerMenu = document.querySelector(".hamburger-menu");

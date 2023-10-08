@@ -38,45 +38,21 @@
 
     <section id="cart-container-payment">
         <div class="cart-head">
-            <p>My Order ( 3 )</p>
-            <a class="lihat-detail" href="#">Order details</a>
+            <p id="my-order"></p>
+            <!-- <a class="lihat-detail" href="#">Order details</a> -->
         </div>
-        <div id="cartItem">
-            <div class='row-img'>
-                <img class='rowimg-payment' src='assets/BurgerAyam.jpg'>
-            </div>
-            <div class='item-description'>
-                <p class='burger-name'>Chicken Burger ( 1x )</p>
-                <p class='price-payment'>Rp 55.000</p>
-            </div>
+        <div id="all-menu">
         </div>
-        <div id="cartItem">
-            <div class='row-img'>
-                <img class='rowimg-payment' src='assets/Cheeseburger.jpg' style="margin-top: 40px;">
-            </div>
-            <div class='item-description' style="margin-top: 20px;">
-                <p class='burger-name'>Cheese Burger ( 1x )</p>
-                <p class='price-payment'>Rp 65.000</p>
-            </div>
-
-        </div>
-        <div id="cartItem">
-            <div class='row-img'>
-                <img class='rowimg-payment' src='assets/BurgerBacon.jpg' style="margin-top: 25px;">
-            </div>
-            <div class='item-description' style="margin-top: 20px;">
-                <p class='burger-name'>Burger Bacon ( 1x )</p>
-                <p class='price-payment'>Rp 70.000</p>
-                <p style="float: left; font-weight: 500; margin-top: 30px; color: black;">Shipping fee</p>
-                <p style="margin-top:30px; font-weight: 500; float: right; margin-right: 23px; margin-bottom: 30px;">Rp 12.000</p>
-            </div>
+        <div id="shipping-fee">
+            <p style="float: left; font-weight: 500; margin-top: 30px; color: black;">Shipping fee</p>
+            <p style="margin-top:30px; font-weight: 500; float: right; margin-right: 23px; margin-bottom: 30px;">Rp 12.000</p>
         </div>
         <div class="cart-foot-payment" style="margin-top: 10%;">
             <h3>Total Item :</h3>
-            <h2 id="total">3</h2>
+            <h2 id="total-menu"></h2>
             <h1>|</h1>
             <h3>Total Harga :</h3>
-            <h2 id="total">Rp 202.000</h2>
+            <h2 id="total-harga"></h2>
         </div>
         <div>
             <button id="checkoutButton">Pay with Virtual Bank</button>
@@ -97,12 +73,13 @@
                 <input type="text" id="shippingAdress" name="shippingAdress" required placeholder="Enter Shipping Adress">
               </form>
               <div>
-                <a href="receipt.html" class="btn-box">Submit</a>
+                <button class="btn-box submit-payment">Submit</button>
               </div>
             </div>
           </div>
     </section>
-    
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
 <script src="js/payment.js"></script>
 </body>
 </html>
