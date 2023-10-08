@@ -62,7 +62,6 @@
             dataType: "json",
             contentType: "application/json; charset=utf-8",
             success: function(response) {
-                console.log(response.data);
                 let html = '';
                 $.each(response.data.details, function(i, val) {
                     html += ` <tr>
@@ -86,7 +85,7 @@
               minimumFractionDigits: 0,
               maximumFractionDigits: 2,
             })
-              .format(response.data.total_harga_diKeranjang)
+              .format(response.data.details.map(val => val.total_harga).reduce((partialSum, a) => partialSum + a, 0) + 12000)
               .replace(",", ".")}`)
             }
         })
