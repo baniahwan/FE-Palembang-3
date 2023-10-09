@@ -11,75 +11,159 @@ cartButton.addEventListener('click', () => {
 
 // Tambahan JavaScript untuk tombol close
 const closeButton = document.getElementById("closeButton");
-
 closeButton.addEventListener('click', () => {
     cartContainer.classList.add('hidden');
 });
 
-// const categories = [...new Set(product.map((item)=>
-//     {return item}))]
-//     let i=0;
+$(function () {
+    //fungsi memanggil semua menu ketika halaman pertama kali ditampilkan
+    getMenu("all");
+    //pengecekan untuk menampilkan nama username
+    if (localStorage.getItem("uname")) {
+      $("span.account-button").removeClass("hide");
+      $("span.account-button").text(localStorage.getItem("uname"));
+    } else {
+      $("span.account-button").addClass("hide");
+      $("span.account-button").text("");
+    }
 
-// document.getElementsByClassName('card-container')[0].innerHTML = categories.map((item)=>
-// {
-//     var {image, title, detail, price} = item;
-//     return(
-//         `<div class="card text-center card-food2 mt-5">
-//         <div class="justify-content-center">
-//         <img src=${image} class="card-img-top" alt="burger">
-//     </div>
-//         <div class="card-body">
-//         <h5 class="card-title title2">${title}</h5>
-//         <p class="price">Rp ${price}.000</p>
-//         <p class="card-text">${detail}</p>
-//         <a class='btn-box' onclick='addtocart("${i++}")'><i class='fa-solid fa-cart-shopping' style='color: #ffffff; margin-right: 7px;'></i> Add to Cart </a>                                        
-//         </div>
-//         </div>`
-//     )
-// }).join('')
+    //menampilkan data keranjang jika user yang sudah login
+    if (localStorage.getItem('uname')) {
+      $.ajax({
+        url: `https://dailydeals-api-production.up.railway.app/keranjang/user/${localStorage.getItem('id')}`,
+        dataType: "json",
+        contentType: "application/json; charset=utf-8",
+        success: function (response) {
+          $('span#cart-count').text(response[0]['payload'].length)
+          let html = '';
+          $.each(response[0]['payload'], function(i, val) {
+            html += `<div class='cart-item'>
+                <div class='row-img'>
+                    <img class='rowimg' src=${val.gambar}>
+                </div>
+                <p style='font-size: 15px;'>${val.nama}</p>
+                <p style='font-size: 14px;'>(${val.jumlah_item})</p>
+                <h2 style='font-size: 18px;'>Rp ${new Intl.NumberFormat("id", {
+                      minimumFractionDigits: 0,
+                      maximumFractionDigits: 2,
+                    })
+                      .format(val.total_harga)
+                      .replace(",", ".")}</h2>
+                <i class='fa-solid fa-trash' onclick='deleteCart(${val.id_keranjang})'></i>
+            </div>`;
+          })
+          $('#cartItem').html(html);
+          $('#total').text(`Rp ${new Intl.NumberFormat("id", {
+                      minimumFractionDigits: 0,
+                      maximumFractionDigits: 2,
+                    })
+                      .format(response[0]['payload'].map(value => value.total_harga).reduce((partialSum, a) => partialSum + a, 0))
+                      .replace(",", ".")}`)
 
-// var cart=[];
+        }
+      })
+    }
+});
 
-//menambahkan item dari kategori tertentu ke dalam keranjang belanja (cart)
-function addtocart(a){
-    cart.push({...categories[a]});
-    displaycart();
+// Menampilkan parameter category = all (menampilkan semua menu), jika parameter bukan all (menampilkan setiap kategori menu )
+function getMenu(category) {
+    $.ajax({
+      url:
+        category === "all"
+          ? `https://dailydeals-api-production.up.railway.app/menu`
+          : `https://dailydeals-api-production.up.railway.app/menu/${category}`,
+      dataType: "json",
+      contentType: "application/json; charset=utf-8",
+      beforeSend: function () {
+        $("#cardContent").html("");
+      },
+      success: function (response) {
+        let html = "";
+        $.each(response[0]["payload"], function (i, val) {
+          html += `<div class="card text-center card-food2 mt-5">
+              <div class="justify-content-center">
+                  <img src="${
+                    val.gambar
+                  }" class="card-img-top" alt="burger">
+              </div>
+              <div class="card-body">
+                  <h5 class="card-title title2">${val.nama}</h5>
+                  <p class="price">Rp ${new Intl.NumberFormat("id", {
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 2,
+                  })
+                    .format(val.harga)
+                    .replace(",", ".")}</p>
+                  <p class="card-text">${val.deskripsi}</p>
+                  ${localStorage.getItem('uname') ? `<div style='display: flex; flex-direction: row; gap: 0.8rem; justify-content:center;  align-items:center;'>
+                  <button id="plus${val.id_menu}" onClick='addQty(${val.id_menu})'><i class="fa-solid fa-plus"></i></button>
+                  <p id="text${val.id_menu}">1</p>
+                  <button id="minus${val.id_menu}" onClick='minusQty(${val.id_menu})'><i class="fa-solid fa-minus"></i></button>
+              </div>
+                  <a class='btn-box' onClick='addToCart(${val.id_menu},${val.harga})'><i class='fa-solid fa-cart-shopping' style='color: #ffffff; margin-right: 7px;'></i> Add to Cart </a>` : ''}
+              </div>
+          </div>`;
+        });
+
+        $("#cardContent").html(html);
+      },
+    });
 }
-//menghapus item dari keranjang belanja berdasarkan indeks atau kunci yang diberikan
-function delElement(a){
-    cart.splice(a, 1);
-    displaycart();
-}
 
-//Menampilkan cart sesuai dengan  pesanan dari user
-// function displaycart() {
-//     let j = 0, total = 0;
-//     document.getElementById("cart-count").innerHTML = cart.length;
-//     if (cart.length == 0) {
-//         document.getElementById('cartItem').innerHTML = "The cart is empty";
-//         document.getElementById("total").innerHTML = "Rp " +0+ ".000";
-//         document.getElementById("cart-count").innerHTML = "";
-//     } else {
-//         document.getElementById('cartItem').innerHTML = cart.map((items) => 
-//         {
-//             var {image, title, price} = items;
-//             total=total+price;
-//             document.getElementById("total").innerHTML = "Rp " + total + ".000";
-//             return (
-//                 `<div class='cart-item'>
-//                     <div class='row-img'>
-//                         <img class='rowimg' src=${image}>
-//                     </div>
-//                     <p style='font-size: 15px;'>${title}</p>
-//                     <h2 style='font-size: 18px;'>Rp ${price}.000</h2>
-//                     <div style='display: flex; flex-direction: row; gap: 0.8rem'>
-//                         <button><i class="fa-solid fa-plus"></i></button>
-//                         <p>1</p>
-//                         <button><i class="fa-solid fa-minus"></i></button>
-//                     </div>
-//                     <i class='fa-solid fa-trash' onclick='delElement("+ (j++) +")'></i>
-//                 </div>`
-//             );
-//         }).join('');
-//     }
-// }
+//menampilkan modal login
+document.getElementById("loginButton").addEventListener("click", function () {
+    if (!localStorage.getItem("uname")) {
+      document.getElementById("loginPopup").style.display = "block";
+    }
+  });
+document.getElementById("closeButton").addEventListener("click", function () {
+    document.getElementById("loginPopup").style.display = "none";
+  });
+
+//menambahkan item kedalam keranjang 
+function addToCart(id_menu, harga) {
+    $.ajax({
+      type: "POST",
+      url:'https://dailydeals-api-production.up.railway.app/keranjang',
+      data: JSON.stringify({
+        id_user: localStorage.getItem("id"),
+        jumlah_item: Number($(`#text${id_menu}`).text()),
+        total_harga: Number($(`#text${id_menu}`).text()) * harga,
+        id_menu,
+      }),
+      dataType: "json",
+      contentType: "application/json; charset=utf-8",
+      success: function (response) {
+        console.log(response);
+      },
+    });
+  }
+
+// menambahkan qty setiap menu
+function addQty(id_menu) {
+    const qty = Number($(`#text${id_menu}`).text());
+    $(`#text${id_menu}`).text(qty + 1);
+  }
+
+// mengurangi qty setiap menu
+function minusQty(id_menu) {
+    const qty = Number($(`#text${id_menu}`).text());
+    if (qty > 1) {
+      $(`#text${id_menu}`).text(qty - 1);
+    }
+  }
+
+//Menghapus item di keranjang
+function deleteCart(id_keranjang) {
+    $.ajax({
+      url: `https://dailydeals-api-production.up.railway.app/deleteitemcart/${id_keranjang}`,
+      type: 'DELETE',
+      dataType: "json",
+      contentType: "application/json; charset=utf-8",
+      success: function (response) {
+        window.location.reload();
+      }
+    })
+  }
+
+
