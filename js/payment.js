@@ -78,7 +78,7 @@ $('.submit-payment').on('click', function() {
     }),
     contentType: "application/json; charset=utf-8",
     success: function() {
-      window.location.href = 'FE-Palembang-3/receipt.html';
+      window.location.href = 'receipt.html';
     }
   })
 })
