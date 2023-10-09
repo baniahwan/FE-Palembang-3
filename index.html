@@ -230,19 +230,20 @@
         <div style="flex: 1">
           <div class="contact-us-text">
             <h1 style="margin-right: 31%">CONTACT US</h1>
-            <p class="information">DROP US A LINE AND WE’LL GET BACK TO YOU</p>
+            <p class="information">DROP US A LINE AND WE’LL GET BACK TO YOU, OR GIVE US FEEDBACK SO THAT WE CAN BE BETTER IN THE FUTURE</p>
           </div>
           <div class="contact-form">
-            <form>
+            <form id="contactForm">
               <label for="name">Name :</label>
               <input type="textContact" id="name" name="name" required /><br />
               <label for="message">Message :</label>
               <textarea id="message" name="message" rows="4"required></textarea>
+              <div id="errorMessages"></div>
               <br /><br />
             </form>
           </div>
           <div>
-            <button class="submit-button">Submit</button>
+            <button class="submit-button" id="submitButton">Submit</button>
           </div>
         </div>
         <div style="width: 30%">
@@ -250,7 +251,7 @@
             <h1>WE'RE OPEN</h1>
           </div>
           <div class="information-open">Telephone : 123-456-7890</div>
-          <div class="information-open">Email : info@go.id</div>
+          <div class="information-open">Email : group3palembang@email.com</div>
           <div class="information-open">Location : Jakarta, Indonesia</div>
         </div>
       </div>
@@ -361,6 +362,25 @@
           window.location.href = '/FE-Palembang-3/index.html';
         }
       })
+
+      const submitButton = document.getElementById("submitButton");
+      const contactForm = document.getElementById("contactForm");
+      const errorMessages = document.getElementById("errorMessages");
+
+      submitButton.addEventListener("click", function(event) {
+            // Periksa apakah input nama dan pesan kosong
+            if (contactForm.name.value === "" || contactForm.message.value === "") {
+                // Munculkan pesan "Harus diisi" di div errorMessages
+                errorMessages.innerHTML = "*name or message are empty";
+                // Hentikan pengiriman form
+                event.preventDefault();
+            } else {
+                // Jika semua isian valid, lanjutkan dengan alert
+                alert("Thanks for your feedback :)");
+                // Bersihkan pesan kesalahan jika ada
+                errorMessages.innerHTML = "";
+            }
+        });
 
       const hamburgerMenu = document.querySelector(".hamburger-menu");
       const navContent = document.querySelector(".navbar-content");
