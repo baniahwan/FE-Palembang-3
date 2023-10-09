@@ -48,7 +48,7 @@ $('#btnLogin').on('click',function() {
             if (response[0]['message'] === 'Login Successful') {
                 localStorage.setItem('uname', response[0]['payload']['username']);
                 localStorage.setItem('id', response[0]['payload']['id']);
-                window.location.href = '/index.html'
+                window.location.href = 'FE-Palembang-3/index.html'
             }
         }
     })
