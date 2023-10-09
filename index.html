@@ -356,10 +356,10 @@
       //// Mengatur event listener untuk tombol logout
       document.getElementById("logoutButton").addEventListener('click', function() {
         localStorage.removeItem('uname');
-        if (window.location.pathname === 'FE-Palembang-3/index.html') {
+        if (window.location.pathname === 'index.html') {
           window.location.reload();
         } else {
-          window.localStorage.href = 'FE-Palembang-3/index.html';
+          window.localStorage.href = 'index.html';
         }
       })
 
