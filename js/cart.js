@@ -40,11 +40,12 @@ closeButton.addEventListener('click', () => {
 
 // var cart=[];
 
+//menambahkan item dari kategori tertentu ke dalam keranjang belanja (cart)
 function addtocart(a){
     cart.push({...categories[a]});
     displaycart();
 }
-
+//menghapus item dari keranjang belanja berdasarkan indeks atau kunci yang diberikan
 function delElement(a){
     cart.splice(a, 1);
     displaycart();
