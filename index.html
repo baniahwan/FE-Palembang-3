@@ -356,6 +356,7 @@
       //// Mengatur event listener untuk tombol logout
       document.getElementById("logoutButton").addEventListener('click', function() {
         localStorage.removeItem('uname');
+        console.log(window.location.pathname)
         if (window.location.pathname === 'FE-Palembang-3/index.html') {
           window.location.reload();
         } else {
