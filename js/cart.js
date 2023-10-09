@@ -135,7 +135,7 @@ function addToCart(id_menu, harga) {
       contentType: "application/json; charset=utf-8",
       success: function (response) {
         console.log(response);
-        window.location.href = '/FE-Palembang-3/index.html';
+        window.location.href = '/FE-Palembang-3/menu.html';
       },
     });
   }
